@@ -1,0 +1,227 @@
+\documentclass[11pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage[width=150mm,top=35mm,bottom=25mm,bindingoffset=6mm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\pagestyle{fancyplain}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+
+\usepackage[style=authoryear,sorting=none]{biblatex}
+\addbibresource{references.bib}
+
+% ============================================================
+%  THEOREM ENVIRONMENTS  —  clean integrated-title-bar style
+% ============================================================
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage[dvipsnames, svgnames, x11names]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{mathtools}
+\usepackage{microtype}
+\tcbuselibrary{skins, breakable}
+
+% ── Palette ─────────────────────────────────────────────────
+\definecolor{TheoremBlue}     {HTML}{1B3F72}
+\definecolor{TheoremBlueLight}{HTML}{EDF3FC}
+\definecolor{TheoremBlueMid}  {HTML}{D0E2F7}
+
+\definecolor{DefGreen}        {HTML}{155230}
+\definecolor{DefGreenLight}   {HTML}{EAF6EE}
+\definecolor{DefGreenMid}     {HTML}{C3E8CE}
+
+\definecolor{LemmaViolet}     {HTML}{4A2080}
+\definecolor{LemmaVioletLight}{HTML}{F3EDFC}
+\definecolor{LemmaVioletMid}  {HTML}{DCCDF5}
+
+\definecolor{CorTeal}         {HTML}{0B5E65}
+\definecolor{CorTealLight}    {HTML}{E6F5F6}
+\definecolor{CorTealMid}      {HTML}{B8E4E7}
+
+\definecolor{FactAmber}       {HTML}{6B3D00}
+\definecolor{FactAmberLight}  {HTML}{FDF5E6}
+\definecolor{FactAmberMid}    {HTML}{F5DFA8}
+
+\definecolor{NoteSlate}       {HTML}{2E4A62}
+\definecolor{NoteSlateLight}  {HTML}{EDF2F7}
+\definecolor{NoteSlateMid}    {HTML}{C5D6E8}
+
+\definecolor{ExerRed}         {HTML}{7A1515}
+\definecolor{ExerRedLight}    {HTML}{FDF0F0}
+\definecolor{ExerRedMid}      {HTML}{F0C4C4}
+
+\definecolor{RemkOlive}       {HTML}{3D4A18}
+\definecolor{RemkOliveLight}  {HTML}{F2F5E8}
+\definecolor{RemkOliveMid}    {HTML}{D4DCAA}
+
+\definecolor{ConjPlum}        {HTML}{5C1A55}
+\definecolor{ConjPlumLight}   {HTML}{F8EDF7}
+\definecolor{ConjPlumMid}     {HTML}{E5BDE2}
+
+% ── Master style: thick left rule + integrated title bar ────
+%    Arguments: #1=frame color, #2=title-bar bg, #3=body bg
+\tcbset{envstyle/.style n args={3}{%
+  enhanced, breakable,
+  % geometry
+  arc=3pt,
+  left=10pt, right=10pt,
+  top=0pt, bottom=8pt,
+  boxrule=0.5pt,
+  % colors
+  colframe=#1,
+  colback=#3,
+  colbacktitle=#2,
+  coltitle=#1,
+  % title bar sits flush inside the box, separated by a rule
+ fonttitle=\bfseries\sffamily\small,
+  titlerule=0.5pt,
+  toptitle=4pt,
+bottomtitle=4pt,
+top=6pt,
+  % left accent stripe
+  borderline west={3pt}{0pt}{#1},
+  % subtle shadow
+  drop fuzzy shadow=black!12!white,
+}}
+
+% ── Shared counter ──────────────────────────────────────────
+\newtcolorbox[auto counter, number within=chapter]{thmbox}[2][]{%
+  envstyle={TheoremBlue}{TheoremBlueMid}{TheoremBlueLight},
+  title={\textsc{Theorem}~\thetcbcounter%
+         \ifx\relax#2\relax\else\enspace\textmd{(#2)}\fi},
+  #1}
+
+\newtcolorbox[use counter from=thmbox]{defbox}[2][]{%
+  envstyle={DefGreen}{DefGreenMid}{DefGreenLight},
+  title={\textsc{Definition}~\thetcbcounter%
+         \ifx\relax#2\relax\else\enspace\textmd{(#2)}\fi},
+  #1}
+
+\newtcolorbox[use counter from=thmbox]{lembox}[2][]{%
+  envstyle={LemmaViolet}{LemmaVioletMid}{LemmaVioletLight},
+  title={\textsc{Lemma}~\thetcbcounter%
+         \ifx\relax#2\relax\else\enspace\textmd{(#2)}\fi},
+  #1}
+
+\newtcolorbox[use counter from=thmbox]{corbox}[2][]{%
+  envstyle={CorTeal}{CorTealMid}{CorTealLight},
+  title={\textsc{Corollary}~\thetcbcounter%
+         \ifx\relax#2\relax\else\enspace\textmd{(#2)}\fi},
+  #1}
+
+\newtcolorbox[use counter from=thmbox]{factbox}[2][]{%
+  envstyle={FactAmber}{FactAmberMid}{FactAmberLight},
+  title={\textsc{Fact}~\thetcbcounter%
+         \ifx\relax#2\relax\else\enspace\textmd{(#2)}\fi},
+  #1}
+
+\newtcolorbox[use counter from=thmbox]{conjbox}[2][]{%
+  envstyle={ConjPlum}{ConjPlumMid}{ConjPlumLight},
+  title={\textsc{Conjecture}~\thetcbcounter%
+         \ifx\relax#2\relax\else\enspace\textmd{(#2)}\fi},
+  #1}
+
+% ── Non-numbered: left-rule only, italic label inline ───────
+\newtcolorbox{notebox}[1][]{%
+  enhanced, breakable,
+  arc=2pt, boxrule=0.4pt,
+  colframe=NoteSlate, colback=NoteSlateLight,
+  borderline west={3pt}{0pt}{NoteSlate},
+  left=10pt, right=8pt, top=6pt, bottom=6pt,
+  drop fuzzy shadow=black!8!white,
+  before upper={\textbf{\sffamily\textcolor{NoteSlate}{Note.}}\enspace},
+  #1}
+
+\newtcolorbox{remkbox}[1][]{%
+  enhanced, breakable,
+  arc=2pt, boxrule=0.4pt,
+  colframe=RemkOlive, colback=RemkOliveLight,
+  borderline west={3pt}{0pt}{RemkOlive},
+  left=10pt, right=8pt, top=6pt, bottom=6pt,
+  drop fuzzy shadow=black!8!white,
+  before upper={\textbf{\sffamily\textcolor{RemkOlive}{Remark.}}\enspace},
+  #1}
+
+% Exercise gets its own counter + title bar
+\newtcolorbox[auto counter, number within=chapter]{exerbox}[2][]{%
+  envstyle={ExerRed}{ExerRedMid}{ExerRedLight},
+  title={\textsc{Exercise}~\theexerbox%
+         \ifx\relax#2\relax\else\enspace\textmd{(#2)}\fi},
+  #1}
+
+% ── Proof ───────────────────────────────────────────────────
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% ── User-facing wrappers ─────────────────────────────────────
+% Usage: \begin{theorem}[Title] ... \end{theorem}
+%        \begin{theorem}       ... \end{theorem}   (no title)
+\NewDocumentEnvironment{theorem}  {O{}}{\begin{thmbox} {#1}}{\end{thmbox}}
+\NewDocumentEnvironment{definition}{O{}}{\begin{defbox}{#1}}{\end{defbox}}
+\NewDocumentEnvironment{lemma}    {O{}}{\begin{lembox} {#1}}{\end{lembox}}
+\NewDocumentEnvironment{corollary}{O{}}{\begin{corbox} {#1}}{\end{corbox}}
+\NewDocumentEnvironment{fact}     {O{}}{\begin{factbox}{#1}}{\end{factbox}}
+\NewDocumentEnvironment{conjecture}{O{}}{\begin{conjbox}{#1}}{\end{conjbox}}
+\NewDocumentEnvironment{note}     {}   {\begin{notebox}}    {\end{notebox}}
+\NewDocumentEnvironment{remark}   {}   {\begin{remkbox}}    {\end{remkbox}}
+\NewDocumentEnvironment{exercise} {O{}}{\begin{exerbox}{#1}}{\end{exerbox}}
+
+% ============================================================
+%  END THEOREM ENVIRONMENTS
+% ============================================================
+
+\title{Thesis Title}
+\author{Author Name}
+\date{Day Month Year}
+
+\begin{document}
+\pagenumbering{roman}
+
+\input{titlepage}
+
+\input{abstract}
+
+\chapter*{Dedication}
+To mum and dad
+
+\chapter*{Declaration}
+I declare that..
+
+\chapter*{Acknowledgments}
+I want to thank...
+
+Supported by grant numbers...
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\doublespacing
+\chapter{Introduction}
+\pagenumbering{arabic}
+\input{chapters/introduction}
+
+\chapter{Chapter Two Title}
+\input{chapters/chapter02}
+
+\chapter{Chapter Three Title}
+\input{chapters/chapter03}
+
+\chapter{Chapter Four Title}
+\input{chapters/chapter04}
+
+\chapter{Conclusion}
+\input{chapters/conclusion}
+
+\appendix
+\chapter{Appendix Title}
+\input{chapters/appendix}
+\singlespacing
+\printbibliography
+
+\end{document}
