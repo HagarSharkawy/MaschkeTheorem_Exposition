@@ -1,10 +1,319 @@
-\begin{thmbox}{Reisz Theorem}
-This is theorem 1
-\end{thmbox}
+We begin by defining what is an Algebra. This is the main structure we will be using throughout this paper. To give you an intuition first, an Algebra is basically a set with a structure of both a ring an a vector space.
 
-\begin{lembox}{}
-This is lemma 1
-\end{lembox}
-\begin{defbox}{}
-This is def 1
-\end{defbox}
+\section{Algebras over a Field}
+
+
+\begin{definition}[k-Algebra]
+Let $k$ be any field. We say that a $k-$vector space $A$ is a $k$-algebra if $A$ is equipped with an associative bilinear operation (product)
+\[
+\times : A \times A \to A
+\]
+satisfying the following axioms of bilinearity.
+For every $x,y,z \in A$ and $a,b \in k$:
+\begin{enumerate}
+    \item 
+    
+$    z \times (x+y) = z \times x + z\times y
+$    
+    \item
+    
+$    (x+y)\times z = x\times z + y \times z
+$    
+    \item
+    
+$    (a \cdot x)\times (b \cdot y) = ab \cdot (x\times y)
+$    
+    
+\end{enumerate}
+where $\cdot $ is the vector space scalar multiplication.
+\end{definition}
+
+Another way to define a $k$-algebra is to first define it as a ring equipped with scalar multiplication operation by embedding the field $k$ inside $A$.
+
+\begin{definition}[k-Algerba]
+    Let $k$ be a field. A $k-$algebra $A$ is a ring with an injective ring homomorphism $k \to A$, where for any $\lambda \in k$ and $a \in A$ we have that 
+    \[
+    \lambda \cdot a = a \cdot \lambda
+    \]
+i.e. multiplication by elements in the image of $k$ in $A$ is commutative.
+\end{definition}
+
+\large \textbf{Remarks:-}\\
+\begin{enumerate}
+    \item Observe that we can define the vector space structure on $A$ in the definition above by defining the scalar product $\lambda a $ to be the product of the image of $\lambda$ in $A$ times $a$ to get $\lambda \cdot a$ for all $\lambda \in k$ and $a \in A$. That is
+    \[\lambda a = \lambda \cdot a\]
+    \item An algebra product operation might not be commutative. If so we just say a commutative algebra.
+\item We may or may not include $1$ as a unity in our definition of an algebra but here we do. And the operation is associative.
+
+\end{enumerate}
+
+
+
+\begin{definition}[k-Algebra Homomorphism]
+    Let $A,B$ be $k-$algebras. A function $\varphi: A \to B$ is a $k-$algebra homomorphism if it is a linear map of vector spaces and for any $a \in A$ and $b \in B$ we have that 
+    \[\varphi(ab) = \varphi(a) \varphi(b)\]
+    
+\end{definition}
+
+\section{Direct Sum and Direct Product}
+
+Now, we get to differentiate between two important notions in linear algebra: Internal Direct Sum and External Direct Product. Sometimes for simplicity we just say Direct Sum and Direct Product.
+
+\begin{definition}[Internal Direct Sum]
+Let $V$ be a vector space. We say $V$ is an internal direct sum of two subspaces $U,W \subseteq V$ iff every vector $v\in V$ could be written uniquely as a sum of two vectors $u,w$
+where $u\in U$, and $w\in W$.
+
+That is
+\[
+V=U+W.
+\]
+there are unique vectors $u\in U$ and $w\in W$ s.t.
+\[
+v=u+w.
+\]
+\end{definition}
+
+The above definition tells us exactly when a sum of two subspaces $U+W$ of a given vector space $V$ is a direct sum, and in this case we call $V$ an internal direct sum since the two spaces $U$ and $W$ are subspaces. Next, we define an External Direct Product of two separate given spaces.
+
+\begin{definition}[External Direct Product]
+Let $K,L$ be two vector spaces. We define the \emph{External Direct Product} of $K$ and $L$ to be the vector space
+\[
+K\times L:=\{(k,l)\mid k\in K,\ l\in L\}
+\]
+with operations of component wise addition and scalar multiplication.
+\end{definition}
+
+
+The next theorem provides a complete characterization for when an External Direct Product of two subspaces and their sum are exactly the same, giving also an equivalent condition for when a sum is an internal direct sum.
+
+\begin{theorem}
+Let $U,W$ be subspaces of a vector space $V$. \textbf{TFAE}
+
+\begin{enumerate}
+    \item The map
+    \[
+    \pi:U\times W\to U+W
+    \]
+    given by
+    \[
+    (u,w)\mapsto u+w
+    \]
+    is an isomorphism.
+
+    \item $ U\cap W=\{0\}.$
+    
+    \item Any vector $x\in U+W$ could be written uniquely in the form
+    \[
+    u+w
+    \]
+    with $u\in U$ and $w\in W$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+$(1)\Rightarrow(2)$ Suppose for the sake of contradiction that there exist a non-zero vector
+\[
+v\in U\cap W.
+\]
+So $v\in U$ and $v\in W$. Hence via the isomorphism $\pi$, the element $(v,0) \in U \times W$ maps to $v+0 = v$ and $(v,0) \in U \times W$ maps to $0+v = v$ violating injectivity of $\pi$.
+
+$(2)\Rightarrow(3)$ Suppose that there is $x\in U+W$ such that $x$ has two different representations
+\[
+x=a+b=c+d.
+\]
+where $a,c \in U$ and $b,d \in W$ 
+Then
+\[
+a+b=c+d
+\]
+\[
+\Rightarrow a-c=d-b.
+\]
+
+Since $U,W$ are subspaces that is closed under addition we get that 
+$a-c\in U$
+and
+$b-d\in W.$ Since $a-c=d-b$, therefore,
+\[
+a-c\in U\cap W.\] 
+which implies that $a-c= d-b= 0$. Hence, $a=c$ and $b=d$ as desired.
+
+
+$(3)\Rightarrow(1)$ Since any vector $ x \in U +W$ could be written as $u+w$, where $u \in U$ and $w \in W$ this implies that $\pi$ is surjective as a preimage for any element $x = u+w$ is $(u,w)$. By uniqueness of this representation of elements in $U+W$ we get that the preimage of an element $x = u+w$ is unique.
+\end{proof}
+
+So, if we have a vector space that is a sum of two subspaces
+\[
+U+W=V
+\]
+and satisfies one of the conditions above we say $V$ is an internal direct sum of $U,W$ and we write
+\[
+V=U\oplus W.
+\]
+Moreover, we can see that the two notions of internal direct sum and external direct product coincide when $K,L$ are subspaces of some vector space $V$ and $V$ is an external direct sum of $K$ and $L$ as proved the direct sum \& product are isomorphic.
+
+
+\begin{definition}[Direct sum of Algebras]
+    Let $A,B$ be two $k-$algebras. We define the direct sum $A \oplus B$ to be the $k-$algebra whose elements are pairs $(a,b)$ where $a \in A$ and $b \in B$, with component wise operations.
+\end{definition}
+% Now, another linear algebraic notion we need here is the Jordan form.
+
+% \begin{definition}[$k$-Algebra]
+% \label{def:k_algebra}
+% Let $k$ be any field. We say a set $A$ is a \emph{$k$-algebra} if $A$ is a $k$-vector space equipped with a bilinear operation
+% \[
+% \cdot : A \times A \longrightarrow A
+% \]
+% satisfying the following axioms for all $x, y, z \in A$ and all $a, b \in k$:
+% \begin{enumerate}
+%     \item $z \cdot (x + y) = z \cdot x + z \cdot y$ \quad \text{(left distributivity)},
+%     \item $(x + y) \cdot z = x \cdot z + y \cdot z$ \quad \text{(right distributivity)},
+%     \item $(ax) \cdot (by) = ab(x \cdot y)$ \quad \text{(bilinearity / compatibility with scalar multiplication)}.
+% \end{enumerate}
+% \end{definition}
+
+% \subsection{Alternative Formulation via Rings}
+% Another equivalent way to define a $k$-algebra is to first define it as a ring $(A, +, \cdot)$ equipped with a scalar multiplication operation $k \times A \to A$ such that $A$ is a $k$-vector space and scalar multiplication is compatible with the ring product:
+% \[
+% c(x \cdot y) = (cx) \cdot y = x \cdot (cy) \quad \text{for all } c \in k, \; x, y \in A.
+% \]
+% Equivalently, a $k$-algebra is a ring $A$ with a ring homomorphism $\eta: k \longrightarrow Z(A)$ from $k$ into the center of $A$.
+
+
+% \text{Remarks:-}\\
+% An algebra is not necessarily commutative under multiplication. When the multiplication satisfies $xy = yx$ for all $x, y \in A$, we refer to it as a \emph{commutative algebra}.
+
+% In general algebraic literature, one may or may not include a multiplicative identity $1$ (a unity) in the basic definition. \textbf{In these notes, we explicitly assume the presence of a unity $1_A$}, and we assume the multiplication is associative:
+% \[
+% (x \cdot y) \cdot z = x \cdot (y \cdot z) \quad \text{for all } x, y, z \in A.
+% \]
+
+
+% \section{Direct Sums and Direct Products in Linear Algebra}
+
+% Now, we differentiate between two foundational notions in linear algebra: \emph{internal direct sums} and \emph{external direct products}.
+
+% \begin{definition}[Direct Sum of Subspaces]
+% \label{def:direct_sum}
+% Let $V$ be a vector space over $k$. We say $V$ is a \emph{direct sum} of two subspaces $U, W \subseteq V$ if and only if every vector $v \in V$ can be written uniquely as a sum of two vectors $u$ and $w$, where $u \in U$ and $w \in W$.
+% That is,
+% \[
+% \forall v \in V, \quad \exists!\, u \in U, \; w \in W \quad \text{such that} \quad v = u + w.
+% \]
+% \end{definition}
+
+% The above definition characterizes precisely when the sum of two subspaces $U + W$ is considered a direct sum. The following theorem provides a complete algebraic characterization.
+
+% \begin{theorem}[Characterization of Direct Sums]
+% \label{thm:direct_sum_tfae}
+% Let $U$ and $W$ be subspaces of a vector space $V$. The following statements are equivalent (\textbf{TFAE}):
+% \begin{enumerate}
+%     \item The linear map
+%     \[
+%     \pi : U \times W \longrightarrow U + W, \qquad (u, w) \longmapsto u + w
+%     \]
+%     is an isomorphism of vector spaces.
+%     \item $U \cap W = \{0\}$.
+%     \item Any vector $x \in U + W$ can be written uniquely in the form $u + w$ with $u \in U$ and $w \in W$.
+% \end{enumerate}
+% \end{theorem}
+
+% \begin{proof}
+% We prove the chain of implications $(1) \implies (2) \implies (3) \implies (1)$.
+
+% \medskip
+% \noindent \textbf{(1) $\implies$ (2):} \\
+% Suppose for the sake of contradiction that there exists a non-zero vector $v \in U \cap W$.
+% Since $v \in U$ and $v \in W$, we may construct two distinct elements in the Cartesian product $U \times W$:
+% \[
+% (v, 0) \in U \times W \quad \text{and} \quad (0, v) \in U \times W.
+% \]
+% Evaluating the map $\pi$ on these elements gives:
+% \[
+% \pi(v, 0) = v + 0 = v,
+% \]
+% and
+% \[
+% \pi(0, v) = 0 + v = v.
+% \]
+% Since $v \neq 0$, we have $(v, 0) \neq (0, v)$, yet $\pi(v, 0) = \pi(0, v)$. This directly violates the injectivity of $\pi$, contradicting our hypothesis that $\pi$ is an isomorphism. Therefore, no such non-zero vector $v$ can exist, and we conclude:
+% \[
+% U \cap W = \{0\}.
+% \]
+
+% \medskip
+% \noindent \textbf{(2) $\implies$ (3):} \\
+% Suppose for the sake of contradiction that there is a vector $x \in U + W$ with two distinct representations:
+% \[
+% x = a + b = c + d, \quad \text{where } a, c \in U \text{ and } b, d \in W.
+% \]
+% Rearranging terms by subtracting $c$ and $b$ from both sides gives:
+% \[
+% a - c = d - b.
+% \]
+% Because $U$ is a subspace and $a, c \in U$, the vector $a - c \in U$. Likewise, because $W$ is a subspace and $b, d \in W$, the vector $d - b \in W$ (note: this is equivalent to $b - d \in W$).
+% Since the two sides are equal, this common vector belongs to the intersection:
+% \[
+% a - c = d - b \in U \cap W.
+% \]
+% By hypothesis (2), $U \cap W = \{0\}$. Thus:
+% \[
+% a - c = 0 \implies a = c, \qquad \text{and} \qquad d - b = 0 \implies b = d.
+% \]
+% Hence, the two representations are identical, proving uniqueness.
+
+% \medskip
+% \noindent \textbf{(3) $\implies$ (1):} \\
+% The map $\pi : U \times W \to U + W$ is linear by the properties of vector addition. It is surjective by the definition of the sum of subspaces $U + W = \{ u + w \mid u \in U, w \in W \}$.
+% If $\pi(u, w) = 0$, then $u + w = 0 + 0$. By the uniqueness of the representation of the zero vector guaranteed by (3), we must have $u = 0$ and $w = 0$. Hence, $\ker(\pi) = \{(0, 0)\}$, proving that $\pi$ is injective. Being a bijective linear transformation, $\pi$ is an isomorphism.
+% \end{proof}
+
+% \begin{definition}[Direct Sum Notation]
+% If a vector space $V$ is the sum of two subspaces $U + W = V$ and satisfies any of the equivalent conditions of Theorem~\ref{thm:direct_sum_tfae}, we say $V$ is the \emph{internal direct sum} of $U$ and $W$, and we write:
+% \[
+% V = U \oplus W.
+% \]
+% \end{definition}
+
+% \section{External Direct Product of Vector Spaces}
+
+% Now, the other complementary linear algebraic notion we introduce is the \emph{direct product}.
+
+% \begin{definition}[External Direct Product]
+% \label{def:direct_product}
+% Let $K$ and $L$ be two vector spaces over the field $k$. We define the vector space
+% \[
+% K \times L := \{ (k, l) \mid k \in K, \; l \in L \}
+% \]
+% equipped with componentwise operations:
+% \begin{align*}
+% (k_1, l_1) + (k_2, l_2) &:= (k_1 + k_2, \; l_1 + l_2), \\
+% \alpha (k, l) &:= (\alpha k, \; \alpha l) \quad \text{for all } \alpha \in k, \; k \in K, \; l \in L,
+% \end{align*}
+% to be the \emph{direct product} of $K$ and $L$.
+% \end{definition}
+
+% \begin{lemma}[Equivalence of Internal and External Notions]
+% When $K$ and $L$ are subspaces of an ambient vector space $V$ satisfying $K \cap L = \{0\}$ and $K + L = V$, the internal direct sum $K \oplus L$ and the external direct product $K \times L$ are canonically isomorphic:
+% \[
+% K \times L \xrightarrow{\ \sim\ } K \oplus L, \qquad (k, l) \longmapsto k + l.
+% \]
+% \end{lemma}
+
+% % \section{Transition to Jordan Canonical Form}
+
+% % Now, another fundamental linear algebraic tool required for representation theory and module decomposition is the \textbf{Jordan canonical form}.
+
+% % Role in Representation Theory:-\\
+% % The Jordan canonical form allows the classification of linear endomorphisms $T \in \operatorname{End}(V)$ up to similarity over algebraically closed fields. In the context of module theory:
+% % \begin{enumerate}
+% %     \item It provides the canonical decomposition of generalized eigenspaces:
+% %     \[
+% %     V = \bigoplus_{\lambda \in \operatorname{Spec}(T)} \ker(T - \lambda I)^{\dim V}.
+% %     \]
+% %     \item It decomposes an operator into its semisimple and nilpotent components ($T = D + N$ with $DN = ND$), identifying non-semisimple representations where Jordan blocks of size $> 1$ manifest non-trivial extensions of modules.
+% % \end{enumerate}
+
+
+
+

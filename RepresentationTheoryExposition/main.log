@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.23)  9 JUL 2026 20:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.23)  11 SEP 2026 16:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"d:/0 - Material - Summer 26/Representation Theory Expository/2021_Math_Thesis_Template/main.tex"
-(d:/0 - Material - Summer 26/Representation Theory Expository/2021_Math_Thesis_Template/main.tex
+**"d:/0 - Material - Summer 26/Representation Theory Expository/RepresentationTheoryExposition/main.tex"
+(d:/0 - Material - Summer 26/Representation Theory Expository/RepresentationTheoryExposition/main.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
 (C:\Users\Office\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
@@ -922,22 +922,22 @@ Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
  (C:\Users\Office\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
-) (titlepage.tex [1
+) (titlepage.tex
+<Representation_2880x1620_Lede_v1.jpg, id=40, 2890.8pt x 1626.075pt>
+File: Representation_2880x1620_Lede_v1.jpg Graphic file (type jpg)
+<use Representation_2880x1620_Lede_v1.jpg>
+Package pdftex.def Info: Representation_2880x1620_Lede_v1.jpg  used on input line 18.
+(pdftex.def)             Requested size: 426.79134pt x 240.05489pt.
+ [1
 
-{C:/Users/Office/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]) (abstract.tex) [1] [2
-
-] [3
-
-] [4
-
-] (main.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
+{C:/Users/Office/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./Representation_2880x1620_Lede_v1.jpg>]) (abstract.tex) [1] (main.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
  (C:\Users\Office\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (C:\Users\Office\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
  (C:\Users\Office\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (C:\Users\Office\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
@@ -946,26 +946,10 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [5
-
-] (main.lof)
-\tf@lof=\write6
-\openout6 = `main.lof'.
-
- [6
-
-] (main.lot)
-\tf@lot=\write7
-\openout7 = `main.lot'.
-
- [7
+ [2
 
 ]
 Chapter 1.
-(chapters/introduction.tex) [1
-
-]
-Chapter 2.
 (chapters/chapter02.tex
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmss' (encoding: OT1).
@@ -974,43 +958,42 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/sc' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 1.
+(Font)              using `OT1/cmss/bx/n' instead on input line 6.
 
-) [2
+[3
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 41--42
+
+ []
+
+[4] [5] [6] [7]) [8]
+Chapter 2.
+(chapters/chapter03.tex [9
+
+] [10] [11] [12] [13] [14] [15]) [16]
 Chapter 3.
-(chapters/chapter03.tex
-<images/graph1.png, id=79, 256.96pt x 248.93pt>
-File: images/graph1.png Graphic file (type png)
-<use images/graph1.png>
-Package pdftex.def Info: images/graph1.png  used on input line 8.
-(pdftex.def)             Requested size: 128.0387pt x 124.03926pt.
-<images/graph2.png, id=81, 258.9675pt x 248.93pt>
-File: images/graph2.png Graphic file (type png)
-<use images/graph2.png>
-Package pdftex.def Info: images/graph2.png  used on input line 15.
-(pdftex.def)             Requested size: 128.0387pt x 123.08208pt.
-<images/graph3.png, id=82, 255.95625pt x 245.91875pt>
-File: images/graph3.png Graphic file (type png)
-<use images/graph3.png>
-Package pdftex.def Info: images/graph3.png  used on input line 22.
-(pdftex.def)             Requested size: 128.0387pt x 123.01535pt.
- [3
+(chapters/chapter04.tex [17
 
- <./images/graph1.png> <./images/graph2.png> <./images/graph3.png>]) [4]
+] [18] [19] [20] [21] [22] [23] [24] [25]
+Overfull \hbox (3.33244pt too wide) in paragraph at lines 342--343
+[]\OT1/cmr/m/n/12 (-20) Consider any col-lec-tion of pair-wise non-isomorphic sim-ple $\OML/cmm/m/it/12 A$\OT1/cmr/m/n/12 (-20) -modules $\OML/cmm/m/it/12 V[]; [] ; V[]$\OT1/cmr/m/n/12 (-20) .
+ []
+
+[26] [27]
+Overfull \hbox (3.66501pt too wide) in paragraph at lines 406--407
+[]\OT1/cmr/m/n/12 (-20) However, this pro-jec-tion $\OML/cmm/m/it/12 P$ \OT1/cmr/m/n/12 (-20) is gen-er-ally \OT1/cmr/m/it/12 (-20) not \OT1/cmr/m/n/12 (-20) a $\OML/cmm/m/it/12 G$\OT1/cmr/m/n/12 (-20) -homomorphism; that is, $\OML/cmm/m/it/12 P\OT1/cmr/m/n/12 (-20) (\OML/cmm/m/it/12 ^^Z\OT1/cmr/m/n/12 (-20) (\OML/cmm/m/it/12 g\OT1/cmr/m/n/12 (-20) )\OML/cmm/m/it/12 v\OT1/cmr/m/n/12 (-20) ) \OMS/cmsy/m/n/12 6\OT1/cmr/m/n/12 (-20) =
+ []
+
+[28] [29] [30] [31] [32] [33] [34] [35]) [36]
 Chapter 4.
-(chapters/chapter04.tex [5
+(chapters/conclusion.tex) [37
 
-] [6] [7] [8]) [9]
-Chapter 5.
-(chapters/conclusion.tex) [10
-
-] [11]
+] [38]
 Appendix A.
-(chapters/appendix.tex) [12
+(chapters/appendix.tex) [39
 
-] [13
+] [40
 
 ] (main.aux)
  ***********
@@ -1026,17 +1009,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33947 strings out of 474486
- 707849 string characters out of 5743283
- 1938542 words of memory out of 5000000
- 55623 multiletter control sequences out of 15000+600000
- 573013 words of font info for 130 fonts, out of 8000000 for 9000
+ 34083 strings out of 474486
+ 709513 string characters out of 5743283
+ 1945542 words of memory out of 5000000
+ 55664 multiletter control sequences out of 15000+600000
+ 578723 words of font info for 189 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 93i,11n,99p,1090b,1456s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (21 pages, 218796 bytes).
+ 93i,12n,99p,1095b,1456s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Office\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (41 pages, 3391449 bytes).
 PDF statistics:
- 176 PDF objects out of 1000 (max. 8388607)
+ 295 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 49836 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 58018 words of extra memory for PDF output out of 61914 (max. 10000000)
 

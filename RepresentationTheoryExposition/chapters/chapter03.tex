@@ -1,38 +1,216 @@
-\section{Section Title}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\section{Introduction and Motivation}
+The main goal of representation theory is to understand abstract algebraic structures—specifically groups and associative algebras—by concretely realizing their elements as linear transformations of vector spaces. By transforming non-linear group multiplication into the well-understood domain of linear algebra and matrix arithmetic, one converts difficult group-theoretic questions into tractable eigenvalue problems, trace computations, and spectral decompositions.
+\\
+First we define what is a representation? then we move to defining a homomorphism and isomorphism of representations. Moreover, we introduce the definition of an important structure that we will be using extensivly throughout this exposition which is the group algebra $k[G]$, then we will move to working with simple representations/modules. In between we show how can modules and representations be seen as the same thing.
 
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}[b]{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{graph1}
-        \caption{$y=x$}
-        \label{fig:y equals x}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{graph2}
-        \caption{$y=3sinx$}
-        \label{fig:three sin x}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{graph3}
-        \caption{$y=5/x$}
-        \label{fig:five over x}
-    \end{subfigure}
-    \caption{Three simple graphs}
-    \label{fig:three graphs}
-\end{figure}
+\section{Basic Definitions}
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\begin{definition}[Representation of an Algebra]
+    
+    Let $A$ be a $k-$algebra, and $V$ be a $k-$vector space. A \emph{representation} of $A$ is a pair $(V,\rho)$ where $\rho: A \to \operatorname{End}(V)$ is a $k-$algebra homomorphism.
+\end{definition}
+\begin{definition}[Subrepresentation]
+    
+    Let $(V, \rho)$ be a representation of any $k-$algebra $A$. We say that a subspace $W \subseteq V$ is a subrepresentation iff elements of $W$ commute with the representation $rho$ or that $W$ is invariant under the action of $A$. That is for any $a \in A$ and any $w \in W$ we have that 
+    \[
+        \rho(a) \cdot w \in W
+    \]
+    
+\end{definition}
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-see \ref{fig:five over x}
+\begin{definition}[Intertwining Operator]
+    Let $(V, \rho_1)$ and $(W, \rho_2)$ be any two representations of a $k-$algebra $A$, an intertwining operator $T:V \to W$ is a linear map that commutes with the action of $A$, that is
+    \[
+       T(\rho_1(a)(v)) = \rho_2(a)(T(v))
+    \]
+    We may also say that $T$ is a homomorphism of representations. If $T$ is invertible, then it is an isomorphism of representations
+\end{definition}
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-\subsection{SubSection Title}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\subsection{Equivalence of Representations and Modules}
+Now, how are representations of any $k-$algebra $A$ could be seen as $A$-modules?
+
+We basically define the action of $A$ on $V$ by the action of the image of $A$ in $\text{End}(V)$ as linear transformations.
+ For the other direction, Let $M$ be an $A-$module. Then $M$ is an abelian group. We define scalar multiplication via the action of $A$, as we mentioned earlier $A$ has a copy of the field $k$ inside it, hence: for any $\lambda \in k$ and any $m \in M$ we have that
+ \[
+ \lambda \cdot  m = \lambda m
+ \]w
+ where $\cdot$ is the action of $A$ on $M$. It remains to prove that the action of $A$ on $M$ as a module defines group algebra homomorphism from $A$ to $\text{End}(M)$.
+
+\begin{proof}
+    Fix any $a \in A$, consider the map
+    \[
+    \varphi(a): M \to M
+    \]
+    given by $m \mapsto a \cdot m$. By the axioms of a module action we get 
+    \begin{itemize}
+        \item $\varphi(a) (m+n) = a \cdot (m + n) = a \cdot m + a \cdot n $
+        \item $\varphi(a) (\lambda m) = a \cdot (\lambda m) = (a \lambda) \cdot m = (\lambda a) \cdot (m) = \lambda(\varphi(a) (m)) 
+         $
+    \end{itemize}
+    the last equality is because we defined the image of the field $k$ in $A$ to be central. So, we proved that $\varphi(a)$ is a linear map for any $a \in A$. Now, we define the group algebra homomorphism
+    \[
+    \rho: A \to \text{End}(M)
+    \]
+    given by $a \mapsto \varphi(a)$. To see that it is an algebra homomorphism, first we use the linearity of $\varphi(a)$
+    \begin{itemize}
+    \item $\rho(a + b ) = \varphi(a+b) = \varphi(a) + \varphi(b) = \rho(a) + \rho(b)$
+    \item $\rho( \lambda a) = \varphi(\lambda a) = \lambda \varphi(a) = \lambda \rho(a)$
+    
+    \end{itemize}
+    since $M$ is an $A$ module, then by associativity of the action and the definition of $\varphi(a)$ for any $a \in A$, we get that 
+\begin{itemize}
+    \item $\rho(ab) = \varphi(ab) = \varphi(a) \varphi(b) = \rho(a)\rho(b)$
+\end{itemize}
+
+\end{proof}
+\section{The Group Algebra}
+Now, we move to a special type of algebra called the Group algebra $k[G]$, that will help us study the representations of a finite group $G$.
+
+
+\begin{definition}[The Group Algebra $k[G]$]
+
+Let $G$ be a finite group and $k$ a field. The \emph{group algebra} $k[G]$ is the $k$-vector space with basis given by the elements of $G$:
+
+\[
+k[G] = \left\{ \sum_{g \in G} a_g \, g \;\middle|\; a_g \in k \right\}.
+\]
+
+The multiplication on $k[G]$ is defined by extending the group multiplication linearly:
+
+\[
+\left( \sum_{g \in G} a_g \, g \right) \left( \sum_{h \in G} b_h \, h \right) = \sum_{g, h \in G} a_g b_h \, (gh) = \sum_{x \in G} \left( \sum_{gh = x} a_g b_h \right) x.
+\]
+
+The vector space dimension of $k[G]$ over $k$ is precisely the order of the group:
+
+\[
+\dim_k(k[G]) = |G|.
+\]
+
+\end{definition}
+
+Before we define a representation of a group, we define the general case of a representation of a group algebra.
+
+\begin{definition}[Representation of a group algebra $k[G]$]
+    Let $G$ be a group. Let $k[G]$ be any group algebra over a field $k$. A representation of $k[G]$ is a pair $(V, \rho)$, where $V$ is a $k$-vector space and
+   \[
+        \rho: A \to \text{End}(V)
+    \]
+    
+    is a group algebra homomorphism.
+
+\end{definition}
+
+The previous definition just says that we are trying to represent elements of an algebra with linear transformation or matrices.
+
+
+
+
+
+
+\section{Representation of a Group}
+We are done discussing the general case. But what about the definition of a group representation? 
+There are two ways to view this definition. One way is to see it as a restriction of the definition of an algebra representation on the basis elements which are basically the elements of the group $G$. The other one, which I find more interesting is to see it as an extension of a group action.
+
+First, recall the definition of a group action on an arbitrary set $S$.
+
+\begin{definition}[Group Action]
+    Let $G$ be a multiplicative group, and $S$ to be any set. We define a group action of $G$ on $S$ to be a function 
+    \[
+    \cdot: G \times S \to S
+    \]
+    denoted by $g \cdot x$ for all $g \in G$ and $x \in S$, satisfying the following axioms:
+    \begin{enumerate}
+        \item $e \cdot x = x  \quad\forall \,\, x \in S$
+        \item $g \cdot (h \cdot x) = gh \cdot x$
+    \end{enumerate}
+
+\end{definition}
+Using the previous two axioms of a group action, one can see that it actually induces a group homomorphism $\alpha: G \to \operatorname{Sym}(S)$, where $\operatorname{Sym}(S)$ is the group of all permutations on $S$ with function composition.
+\begin{proof}
+    Let $\cdot : G \times S \to S$ be a group action. Consider the map 
+    \[
+    \alpha: G \to \operatorname{Sym}(G)
+    \] 
+    where $\alpha(g)$ is a bijection on $S$ such that 
+    
+    \[\alpha(g)(x) = g \cdot x \]
+    for all $g \in G$ and $x \in S$. We claim that $\alpha$ is a group homomorphism. By the axioms of the group action, for any $g,h \in G$: 
+    \[
+    \alpha(gh)(x) = gh \cdot x = g \cdot (h \cdot x) = \alpha(g)(\alpha(h)(x)) = \alpha(g) \circ \alpha(h) (x)
+    \]
+\end{proof}
+
+Now, we repeat the same process but using a group action of a group $G$ on a vector space $V$ instead of an arbitrary set $S$ requiring an additional property for the group action which is to be $\emph{linear}$.
+
+\begin{definition}[Linear Group Action]
+    Let $V$ be a $k-$vector space, and $G$ be any group. Define the group action of $G$ on $V$ as the function 
+    \[
+    \cdot: G \times V \to V
+    \]
+    that satisfies the following axioms:
+    \begin{enumerate}
+        \item $e \cdot v = v  \quad\forall \,\, v \in V$
+        \item $g \cdot (h \cdot v) = gh \cdot v$
+        \item $g \cdot (v + w) = g \cdot v + g \cdot w$
+        \item $g \cdot ( \lambda v) = \lambda (g \cdot v)$
+    \end{enumerate}
+\end{definition}
+This definition is in fact equivalent to having a group homomorphism $\varphi: G \to \operatorname{GL}(V)$, exactly in the same way a regular group action gives rise to a homomorphism of groups from $G$ to the symmteric group on an arbitrary set $S$. This pair of the homomorphism $\varphi$ along with the vector space $V$ are called a $\emph{representation}$ of the group $G$.
+\begin{definition}[Representation of a Group]
+
+Let $G$ be a group, and let $V$ be a vector space over a field $k$. A \emph{representation} of $G$ is a pair $(V, \varphi)$ where $\varphi: G \to \operatorname{GL}(V)$ is a group homomorphism given by the linear action of $G$ on $V$.
+\end{definition}
+
+\begin{definition}[$G$-Homomorphism]
+
+Let $(\rho_1, V_1)$ and $(\rho_2, V_2)$ be two representations of a group $G$ over $k$. A linear map $T \colon V_1 \to V_2$ is called an \emph{intertwining operator} (or \emph{$G$-homomorphism}) if it commutes with the $G$-action:
+
+\[
+T \circ \rho_1(g) = \rho_2(g) \circ T \quad \text{for all } g \in G.
+\]
+
+ If $T$ is an invertible linear isomorphism, we say that $\rho_1$ and $\rho_2$ are \emph{equivalent} (or \emph{isomorphic}), denoted $\rho_1 \cong \rho_2$.
+ % In matrix terms, fixing bases for $V_1$ and $V_2$, there exists an invertible matrix $C$ such that
+
+% \[
+% \rho_2(g) = C \, \rho_1(g) \, C^{-1} \quad \text{for all } g \in G.
+% \]
+
+\end{definition}
+
+\begin{definition}[Subrepresentation]
+
+Let $\rho \colon G \to \operatorname{GL}(V)$ be a representation. A vector subspace $W \subseteq V$ is called a \emph{$G$-invariant subspace} (or \emph{subrepresentation}) if
+
+\[
+\rho(g)w \in W \quad \text{for all } g \in G \text{ and all } w \in W.
+\]
+
+\end{definition}
+
+\begin{definition}[Irreducible representation]
+    We say a representation $(V, \rho)$ is irreducible if $V$ has no proper non-zero subrepresentations.
+\end{definition}
+\begin{definition}[Indecomposable representation]
+    We say a representation $(V, \rho)$ is indecomposable if there doesn't exist a pair of subrepresentations $U,W$ such that $V = U \oplus W$.
+\end{definition}
+\begin{note}
+
+It is essential to distinguish between \emph{irreducibility} and \emph{indecomposability}:
+
+\begin{itemize}
+
+    \item A representation $V$ is \emph{irreducible} if it admits no proper non-zero subrepresentation.
+
+    \item A representation $V$ is \emph{indecomposable} if it cannot be written as a direct sum of two non-zero subrepresentations, i.e., $V \neq W_1 \oplus W_2$ with $W_1, W_2 \neq \{0\}$.
+
+\end{itemize}
+
+Every irreducible representation is indecomposable, but the converse does not hold in general fields! As we shall see in Section~\ref{sec:modular_failure}, when the characteristic of the field divides the group order, there exist indecomposable representations that are strictly reducible.
+
+\end{note}
+
+% When analyzing representations, the first foundational question that emerges is: \emph{When should two representations be considered the same?} As observed in elementary linear algebra, a single linear transformation possesses infinitely many matrix representations depending on the chosen basis. Two matrix representations are equivalent if they differ merely by an invertible change-of-basis matrix.
+
