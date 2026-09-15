@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1789137990.89622 -1
-  "main.bcf" 1789137990 107150 e534442521399b5313a8434d397a52d4 "pdflatex"
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1789494736.56176 -1
+  "main.bcf" 1789494736 107150 e534442521399b5313a8434d397a52d4 "pdflatex"
   "references.bib" 1782642033 873 1beb53c0e2edfad9fd7e908a70af928a ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1789137980.19657 "d:/0 - Material - Summer 26/Representation Theory Expository/RepresentationTheoryExposition/main.tex" "main.pdf" "main" 1789137990.89954 0
-  "C:/Users/Office/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1782683396 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
+["pdflatex"] 1789494729.50928 "d:/0 - Material - Summer 26/Representation Theory Expository/RepresentationTheoryExposition/main.tex" "main.pdf" "main" 1789494736.56322 0
+  "C:/Users/Office/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1789402122 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Office/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1789132258 14064 6070ac8921a3119543fe84ef2cecb60a ""
   "C:/Users/Office/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1758643733 24225518 82e383e8b7a04df7c809dbf642a520c8 ""
   "C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm1200.tfm" 993062508 1444 95ffe0f19b974d50849790c8225c7ef7 ""
@@ -48,12 +48,10 @@
   "C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1247596667 30251 6afa5cb1d0204815a708a080681d4674 ""
   "C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1247596667 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1247596667 36741 0ee9e374ec3e30da87cdfb0ea3575226 ""
-  "C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1247596666 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1247596666 35469 dcf3a5f2fc1862f5952e3ee5eb1d98c4 ""
   "C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
   "C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1247596666 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
-  "C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1247596667 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1247596667 32726 39f0f9e62e84beb801509898a605dbd5 ""
   "C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb" 1247596666 24457 5cbb7bdf209d5d1ce9892a9b80a307cc ""
   "C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb" 1247596666 28902 2f5c04fd2884d1878057baa5aad22765 ""
@@ -64,7 +62,6 @@
   "C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb" 1247596666 35660 fb24af7afbadb71801619f1415838111 ""
   "C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1247596667 31099 342ef5a582aacbd3346f3cf4579679fa ""
   "C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1247596673 31764 459c573c03a4949a528c2cc7f557e217 ""
-  "C:/Users/Office/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1247596673 34694 870c211f62cb72718a00e353f14f254d ""
   "C:/Users/Office/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "C:/Users/Office/AppData/Local/Programs/MiKTeX/tex/generic/iftex/iftex.sty" 1643997108 7237 bdd120a32c8fdb4b433cf9ca2e7cd98a ""
   "C:/Users/Office/AppData/Local/Programs/MiKTeX/tex/generic/iftex/ifvtex.sty" 1643997108 1057 525c2192b5febbd8c1f662c9468335bb ""
@@ -233,15 +230,15 @@
   "abstract.tex" 1789129759 711 58be927dce716ef06f2adfd550274d4e ""
   "chapters/appendix.tex" 1782642034 21 b2f89aa83faf554c89584db532ff04b2 ""
   "chapters/chapter02.tex" 1789136871 13958 d7b2bdb43bbca11f64faf065651c62a4 ""
-  "chapters/chapter03.tex" 1789137978 11147 c70faa462b6f7870b71f83fce5679940 ""
-  "chapters/chapter04.tex" 1788803996 28261 f2522622fb935d1f792b05eb67d7df2f ""
+  "chapters/chapter03.tex" 1789138030 11147 c70faa462b6f7870b71f83fce5679940 ""
+  "chapters/chapter04.tex" 1789494728 2770 9800ffb42fc6e0aa657a09e23739c88a ""
   "chapters/conclusion.tex" 1782642033 1900 30db3bd0515da55d4c6ecba009ae405c ""
   "d:/0 - Material - Summer 26/Representation Theory Expository/RepresentationTheoryExposition/main.tex" 1789132516 7562 c69adb53176efd505f8c31e022523feb ""
-  "main.aux" 1789137990 4141 87783b52ec52f99963c304b2bd94b300 "pdflatex"
+  "main.aux" 1789494736 2629 f7142cef5e4f2340f83e2a6f2c31dcec "pdflatex"
   "main.bbl" 1789038653 4737 5eb8725dfa017b0a02c628a698a786ed "biber main"
-  "main.run.xml" 1789137990 2311 e66a0e3ff336a5af941c7fe634558519 "pdflatex"
+  "main.run.xml" 1789494736 2311 e66a0e3ff336a5af941c7fe634558519 "pdflatex"
   "main.tex" 1789132516 7562 c69adb53176efd505f8c31e022523feb ""
-  "main.toc" 1789137990 1742 a036c49c100d6c65490811ab79fc7834 "pdflatex"
+  "main.toc" 1789494736 918 66b7a7171c029cfe2350944f3661fb35 "pdflatex"
   "titlepage.tex" 1788715919 715 b6457b454676dc0a1a1d6895a8b4444a ""
   (generated)
   "main.aux"
