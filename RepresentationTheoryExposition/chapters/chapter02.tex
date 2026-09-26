@@ -38,16 +38,13 @@ Another way to define a $k$-algebra is to first define it as a ring equipped wit
 i.e. multiplication by elements in the image of $k$ in $A$ is commutative.
 \end{definition}
 
-\large \textbf{Remarks:-}\\
-\begin{enumerate}
-    \item Observe that we can define the vector space structure on $A$ in the definition above by defining the scalar product $\lambda a $ to be the product of the image of $\lambda$ in $A$ times $a$ to get $\lambda \cdot a$ for all $\lambda \in k$ and $a \in A$. That is
-    \[\lambda a = \lambda \cdot a\]
-    \item An algebra product operation might not be commutative. If so we just say a commutative algebra.
-\item We may or may not include $1$ as a unity in our definition of an algebra but here we do. And the operation is associative.
-
-\end{enumerate}
-
-
+\begin{note}
+    \\
+    1. Observe that we can define the vector space structure on $A$ in the definition above by defining the scalar product $\lambda a $ to be the product of the image of $\lambda$ in $A$ times $a$ to get $\lambda \cdot a$ for all $\lambda \in k$ and $a \in A$. That is
+    \[\lambda a = \lambda \cdot a\] \\
+   2. An algebra product operation might not be commutative, just like a ring need not be commutative. If so we just say it is a commutative algebra.\\
+3. We may or may not include $1$ as a unity in our definition of an algebra but here we do. And the operation is associative.
+\end{note}
 
 \begin{definition}[k-Algebra Homomorphism]
     Let $A,B$ be $k-$algebras. A function $\varphi: A \to B$ is a $k-$algebra homomorphism if it is a linear map of vector spaces and for any $a \in A$ and $b \in B$ we have that 
@@ -57,23 +54,24 @@ i.e. multiplication by elements in the image of $k$ in $A$ is commutative.
 
 \section{Direct Sum and Direct Product}
 
-Now, we get to differentiate between two important notions in linear algebra: Internal Direct Sum and External Direct Product. Sometimes for simplicity we just say Direct Sum and Direct Product.
+Now, we get to differentiate between two important notions in linear algebra: Internal direct sum and external direct product. Sometimes for simplicity we just say Direct Sum and Direct Product.
 
 \begin{definition}[Internal Direct Sum]
-Let $V$ be a vector space. We say $V$ is an internal direct sum of two subspaces $U,W \subseteq V$ iff every vector $v\in V$ could be written uniquely as a sum of two vectors $u,w$
+Let $V$ be a vector space. We say $V$ is the internal direct sum of two subspaces $U,W \subseteq V$ denoted by $V = U \oplus V$ iff every vector $v\in V$ could be written uniquely as a sum of two vectors $u,w$
 where $u\in U$, and $w\in W$.
 
-That is
+That is, if
 \[
 V=U+W.
 \]
+and $V$ is the internal direct sum of $U$ and $V$, then
 there are unique vectors $u\in U$ and $w\in W$ s.t.
 \[
 v=u+w.
 \]
 \end{definition}
 
-The above definition tells us exactly when a sum of two subspaces $U+W$ of a given vector space $V$ is a direct sum, and in this case we call $V$ an internal direct sum since the two spaces $U$ and $W$ are subspaces. Next, we define an External Direct Product of two separate given spaces.
+The above definition tells us exactly when a sum of two subspaces $U+W$ of a given vector space $V$ is a direct sum, and in this case we call $V$ an internal direct sum since the two spaces $U$ and $W$ are subspaces. Next, we define an external direct product of two separate given spaces.
 
 \begin{definition}[External Direct Product]
 Let $K,L$ be two vector spaces. We define the \emph{External Direct Product} of $K$ and $L$ to be the vector space
@@ -84,7 +82,7 @@ with operations of component wise addition and scalar multiplication.
 \end{definition}
 
 
-The next theorem provides a complete characterization for when an External Direct Product of two subspaces and their sum are exactly the same, giving also an equivalent condition for when a sum is an internal direct sum.
+The next theorem provides a complete characterization for when an external direct product of two subspaces and their sum are exactly the same, giving also an equivalent condition for when a sum is an internal direct sum.
 
 \begin{theorem}
 Let $U,W$ be subspaces of a vector space $V$. \textbf{TFAE}

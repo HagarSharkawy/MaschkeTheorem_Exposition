@@ -4,10 +4,10 @@
 \contentsline {chapter}{\numberline {2}Basics of Representation Theory}{9}{}%
 \contentsline {section}{\numberline {2.1}Introduction and Motivation}{9}{}%
 \contentsline {section}{\numberline {2.2}Basic Definitions}{10}{}%
-\contentsline {subsection}{\numberline {2.2.1}Equivalence of Representations and Modules}{10}{}%
-\contentsline {section}{\numberline {2.3}The Group Algebra}{12}{}%
-\contentsline {section}{\numberline {2.4}Representation of a Group}{13}{}%
-\contentsline {chapter}{\numberline {3}Semi-Simple Algebras}{17}{}%
-\contentsline {section}{\numberline {3.1}Definitions}{17}{}%
-\contentsline {chapter}{\numberline {4}Conclusion}{20}{}%
-\contentsline {chapter}{\numberline {A}Appendix Title}{22}{}%
+\contentsline {subsection}{\numberline {2.2.1}Equivalence of Representations and Modules}{11}{}%
+\contentsline {section}{\numberline {2.3}Representation of a Group}{12}{}%
+\contentsline {section}{\numberline {2.4}The Group Algebra $k[G]$}{16}{}%
+\contentsline {chapter}{\numberline {3}Semi-Simple Algebras}{18}{}%
+\contentsline {section}{\numberline {3.1}Definitions}{18}{}%
+\contentsline {section}{\numberline {3.2}Density Theorem}{22}{}%
+\contentsline {section}{\numberline {3.3}Maschke's Theorem}{25}{}%

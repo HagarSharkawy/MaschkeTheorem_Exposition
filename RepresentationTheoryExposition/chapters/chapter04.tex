@@ -4,8 +4,11 @@
 Now, as we are done talking about the basics of representation theory, we get to the main goal of this exposition: introducing Semisimple algebras. The main claim we aim to prove in this chapter is that all semisimple algebras are product of matrix algebras. This characterization shows that semisimple algebras are the easiest to work with.
 
 \begin{definition}[Semisimple Algebra]
-    An algebra $A$, viewed as a representation of $A$ is \emph{semisimple} or \emph{completely reducible} if it is a direct sum of irreducible representations of $A$.
+    An algebra $A$ is \emph{semisimple} if when viewed as a representation of $A$ is a direct sum of irreducible representations of $A$.
     
+\end{definition}
+\begin{definition}
+    A completely reducible representation of an alegbra $A$ is a direct sum of irreducible representations.
 \end{definition}
 There are many ways to define semisimple algebras, and they are all equivalent. At the end, we see that all of these definitions are just stating properties that such an algebra has.
 We will prove that all of these properties are equivalent.
@@ -14,7 +17,7 @@ In fact, semisimple algebras are nice to work with since they are all isomorphic
 
 Now, we have a nice lemma about irreducible representations that makes a lot of sense if we can see that the kernel and the image of an intertwining operator are subrepresentations.
 
-\begin{lemma}
+\begin{lemma}[Schur's Lemma]
     Let $A$ be a $k-$algebra and $V,W$ be two irreducible representations of $A$. Let $\varphi: V \to W$ be an intertwining operator. Then $\varphi$ is either zero or an isomorphism. 
 \end{lemma}
 \begin{proof}
@@ -26,37 +29,167 @@ Now, we have a nice lemma about irreducible representations that makes a lot of 
     and this ends the proof.
 \end{proof}
 
-before we go to the main theorems we define the regular and trivial representations
+\begin{lemma}[Schur's Lemma for algebraically closed fields]
+    Let $A$ be any $k-$algebra, and $V$ an irreducible representation of $A$. Then,
+    \begin{align*}
+        \operatorname{End}_A (V) \cong k \cdot id \cong k
+    \end{align*}
+\end{lemma}
+\begin{proof}
+    
+\end{proof}
+Before we go to the main theorems we define the regular and trivial representations
 
 \begin{definition}[Regular Representations]
-
+    Let $A$ be any $k-$algebra. The regular representation of $A$ is the vector space structure of $A$, with the action on itself given by the multiplication operation defined on $A$ as an algebra.
+More precisely, the pair $(A, \rho)$ is the regular representation of an algebra $A$, where $\rho: A \to \operatorname{End}(A)$ is given by the multiplication operation where:
+\begin{align*}
+    a \cdot b = \rho(a)(b) = ab
+\end{align*}
+for all $a,b \in A$
 \end{definition}
 
 \begin{definition}[Trivial Representation]
-    
+    Let $A = \operatorname{Mat}_d(\mathbb{R})$ be an algebra. The \emph{trivial representation} of $A$ is the vector space $V = k^{\oplus d}$, where the action of $A$ is given by regular matrix multiplication.
+
 \end{definition}
 
 \begin{definition}[Radical]
-    
+    The radical of a finite dimensional algebra $A$ denoted by $\operatorname{Rad}(A)$ is an ideal of $A$ containing all elements that are mapped to the zero map in all irreducible representations of $A$.
 \end{definition}
-\begin{theorem}[Finitely many irreducible representations]
-    
-\end{theorem}
+We will then prove that the radical of $A$ is a two sided ideal
 
-\begin{theorem}[The irreducible representations of a semisimple algebra]
-    
-\end{theorem}
+\begin{proof}
+    Let $(V, \rho)$ be any irreducible representation of $A$. Pick any element $a \in A$ and an element $r \in \operatorname{Rad}(A)$. Then $\rho(r)(v) = 0$ for any $v \in V$. Since $\rho$ is a homomorphism of algebras, we get that
+    \begin{align*}
+       \rho(ar)(v) = \rho(a)(\rho(r)(v)) = \rho(a)(0) = 0
+    \end{align*}
+So, $ar \in \operatorname{Rad}(A)$. For the right side, since $r \in \operatorname{Rad}(A)$ then:
+\begin{align*}
+    \rho(ra)(v) = \rho(r)(\rho(a)(v)) = 0
+\end{align*}
+Thus, $ra \in \operatorname{Rad}(A)$, showing that $\operatorname{Rad}(A)$ is a right sided ideal
+\end{proof}
+
 \begin{theorem}[Equivalences to semisimplicity]
-    
+    Let $A$ be a finite dimensional algebra. \textbf{TFAE}:
+    \begin{enumerate}
+         \item $\operatorname{Rad}(A) = 0$.
+        \item $\sum_{i=1}^r \dim(V_i) = \dim(A)$,
+        \item $A \cong \bigoplus_{i=1}^r \operatorname{Mat}_{d_i}(k)$, where $d_i$ is the dimension of the irreducible representation $V_i$ of $A$.
+        \item Any finite dimensional representation of $A$ is completely reducible.
+        \item $A$ is a semi-simple algebra
+    \end{enumerate}
 
 \end{theorem}
+\begin{theorem}[The irreducible representations of a matrix algebra]
+    Let $A = \operatorname{Mat}_d(k)$ be a matrix algebra. The only irreducible representation of $A$ is the trivial representation $V = k^{\oplus d}$. Moreover, any finite dimensional representation $W$ of $A$ is a direct sum of $k^{\oplus d}$ i.e. $W = V^{\oplus m}$ for some $m$.
+\end{theorem}
+
+The previous theorem completely describes the finite dimensional representations of any semisimple algebra (as they are direct sum of matrix algebras) and states that there is only one irreducible one. In the next section, we will show that more generally for any finite dimensional algebra we have finitely many irreducible representations, and it turns out that the semisimple algebras are the nice case when the number of the irreducible representations is just one.
 
 
-
+\section{Density Theorem}
 \begin{theorem}[Density Theorem]
-    
+    Let $A$ be a finite dimensional algebra, and $V_1, V_2, \dots, V_r$ be the irreducible representations of $A$, then
+    \begin{itemize}
+        \item For any $i$ we have that $\rho_i: A \to \operatorname{End}(V_i)$ is surjective
+        \item The direct sum map $\bigoplus_{i=1}^m \rho_i: A \to \bigoplus_{i=1}^m \operatorname{End}(V_i)$ is surjective
+    \end{itemize}
 \end{theorem}
+ We introduce the following two lemmas in our proof
+   \begin{lemma}
+    \label{lemma 3.12}
+    Let $V = \bigoplus_{i=1}^m V_i^{\oplus n_i}$ where $V_i$ are pairwise non-isomorphic representations. 
+    Then any subrepresentation of $V$ is of the form $W = \bigoplus_{i=1}^m V_i^{\oplus m_i}$ where $m_i \leq n_i$ for every $i$, and the inclusion map $\phi: W \hookrightarrow V$ is given by  a direct sum of inclusions of each summand $\phi_i: V_i^{\oplus n_i} \hookrightarrow V_i^{\oplus m_i}$.
+ \end{lemma}
+   \begin{lemma}
+    \label{lemma 3.13}
+     Let $V$ be an irreducible representation of $A$ and consider any set of linearly independent vectors $v_1,v_2, \dots , v_r \in V$. 
+     Then for any vectors $w_1, w_2, \dots, w_r \in V$, there is $a \in A$ such that $av_i = w_i$ for every $i$.
 
-\begin{theorem}[Maschke Theorem]
+   \end{lemma}
+   This lemma basically says that any set of vectors are mapped via some element in $A$ to a linearly independent set of vectors.
+   \begin{proof}
+   
+   \end{proof}
+Before we get to proving the density theorem we introduce the notion of a direct sum of functions denoted by $\bigoplus^r_{i =1} \rho_i$.
+\begin{definition}
+For any set $A$ and a collection of $r$ many sets $B_i$, where $1 \leq i \leq r$. Define $r$ many functions $\phi_i: A \to B_i$, then the \emph{direct sum} of $\phi_i$ is the function $\bigoplus^r_{i=1} \phi_i$ where:
+\begin{align*}
+    \bigoplus_{i= 1}^r \phi_i: A \to B_i,
+\end{align*}
+given by
+\begin{align*}
+    a \mapsto (\phi_1(a), \phi_2(a), \dots, \phi_r(a))
+\end{align*}
+or in a more compact notation $a \mapsto \bigoplus_{i=1}^r \phi_i(a)$ for every $a \in A$.
+\end{definition}
+So, from this definition we can see that the image of $A$ in $\bigoplus_{i=1}^m \operatorname{End}(V_i)$ is a subset of the direct sum of the images of each $\rho_i$. To be more precise, we define the following sets for our proof:
+\begin{enumerate}
+    \item The image of $A$ in $\bigoplus_{i=1}^m \operatorname{End}(V_i)$ is the set $B = \big \{\bigoplus_{i=1}^m \rho_i(a) \mid a \in A \big\}.$
+    \item  The sets $B_i = \operatorname{Img} (\rho_i)$. Their direct sum $\bigoplus_{i=1}^m B_i = \big\{\bigoplus_{i=1}^m \rho_i(a_i) \mid a_i \in A \big\}$
+\end{enumerate}
+\begin{note}
+\\
+Those two sets $B$ and $\bigoplus_i B_i$ seem to be equal at the first glance, but in fact $B \subseteq \bigoplus^m_{i=1} B_i$. This is because the tuples in $B$ have the same $a$ as an input for each $\rho_i$, while in the direct sum $\bigoplus^m_{i=1} B_i$ it is not necessarily the case that the input to each $\rho_i$ is the same.
+Now, what we will try to prove and what actually the theorem is telling us is that no matter what tuple of matrices you choose in $\bigoplus_{i=1}^m \operatorname{End}(V_i)$, or for any tuple with any combination of inputs to $\rho_i$, we will be able to find an input element $a \in A$
+ such that the tuple we chose is exactly $\bigoplus_{i=1}^m \rho_i(a)$ (note that it is the same $a$!).
+  This is what surjectivity actually mean here, we pick a tuple in $\bigoplus_{i=1}^m \operatorname{End}(V_i)$, which turns out to be equal to the direct sum $\bigoplus_i B_i$,
+   and we want to show that this tuple is in the image of $A$ under the function $\bigoplus_{i=1}^m \rho_i$.
+
+\end{note}
+
+  
+\begin{proof}
+    First, we prove the case for $m =1$, i.e. where the function $\rho: A \to \operatorname{End}(V)$ is surjective for any irreducible finite dimensional representation $V$. 
+    Let $v_1, v_2, \dots, v_n$ be a basis for $V$. Since $v_i$ are linearly independent, then by Lemma~\ref{lemma 3.13} for any set of vectors $w_1, w_2, \dots, w_n$, there exist $a \in A$ such that $av_i = w_i$. Let $\alpha \in \operatorname{End}(V)$ be any linear transformation. Consider the set $w_i$ of the images of $v_i$ under $\alpha$ that is $\alpha(v_i) = w_i$. Therefore, $\alpha$ is a preimage for $a$. Hence, $\rho$ is surjective.
+    
+Now, for the general case consider the set $B$ we defined above. Observe that the representation $\bigoplus_{i=1}^m \operatorname{End}(V_i)$ is a completely reducible representation of $A$, where $\operatorname{End}(V_i) \cong V_i^{\oplus d_i}$ and $d_i$ is the dimension of $V_i$. By surjectivity of each $\rho_i$, we get that 
+\begin{align*}
+B_i \cong \operatorname{End}(V_i) \cong V_i^{\oplus d_i}.
+\end{align*}
+
+for all $1\leq i \leq r$. So, $\bigoplus_i B_i$ is completely reducible, and 
+\begin{align*}
+\bigoplus_{i}B_i \cong \bigoplus_{i=1}^m V_i^{\oplus d_i}.
+\end{align*}
+Since $B \subseteq \bigoplus_{i}B_i$ is a subrepresentation since it is the image of a homomorphism of representations. Then by Lemma~\ref{lemma 3.12}, $B = W = \bigoplus_{i = 1}^m V_i^{\oplus k_i}$, where $k_i \leq d_i$ and $B = \phi(W)$ since $\phi$ is an inclusion.
+\\ Define the set
+\begin{align*}
+    \pi_i (B)= \{\rho_i(a) \mid a \in A\} \cong \rho_i(A) = B_i
+\end{align*}
+This function $\pi_i$ just outputs a subset of $B$ by taking the tuples that are all zeroes except the $i-$th entry ranging over all $a \in A$. 
+Similarly, 
+\begin{align*}
+    \pi_i(\phi (W)) = \{\phi_i(w_i) \mid w_i \in V_i^{\oplus k_i}\}
+\end{align*}
+Hence, we get the following chain of equalities
+\begin{align*}
+\pi_i(B) = \pi_i(\phi(W)) = \phi_i(V_i^{\oplus k_i}) = V_i^{\oplus k_i} =B_i.
+\end{align*}
+Therefore, 
+\begin{align*}
+    \bigoplus_i B_i = \bigoplus_{i=1}^m V_i^{\oplus k_i} = B
+\end{align*}
+as desired.
+\end{proof}
+
+Using density theorem, we prove the following nice theorem about the irreducible representations of a finite dimensional algebra (including the semisimple ones). We actually have finitely many of them!
+\begin{theorem}[Finitely many irreducible representations]
+    Let $A$ be a finite dimensional algebra. Then $A$ has only finitely many irreducible finite dimensional representations $V_i$ up to isomorphsim. Moreover, 
+    \begin{align*}
+        A \backslash \operatorname{Rad}(A) \cong \bigoplus_i \operatorname{End}(V_i).
+    \end{align*}
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+\section{Maschke's Theorem}
+   \begin{theorem}[Maschke Theorem]
     
 \end{theorem}
+\begin{proof}
+    
+\end{proof}
