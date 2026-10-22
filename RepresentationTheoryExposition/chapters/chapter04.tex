@@ -36,7 +36,11 @@ Now, we have a nice lemma about irreducible representations that makes a lot of 
     \end{align*}
 \end{lemma}
 \begin{proof}
-    
+    Let $T \in \operatorname{End}_A(V)$ be any intertwining operator. Since $k$ is algebraically closed then $T$ has at least one eigenvalue in $k$. So, there is a non-zero vector $v \in V$ such that
+    \begin{align*}
+        T(v) = \lambda v
+    \end{align*}
+    for some $\lambda \in k$. From this equation we get that $T -\lambda \operatorname{id} (v) = 0 $. Since $T -\lambda \operatorname{id} \in \operatorname{End}_A(V)$ and $V$ is irreducible then it is either zero or an isomorphism. But $v$ is a non-zero vector in $\ker\big(T -\lambda \operatorname{id}\big) $. Therefore $T -\lambda \operatorname{id} = 0$, where $0$ is the zero map, and so $T = \lambda \operatorname{id}$. This completes the proof.
 \end{proof}
 Before we go to the main theorems we define the regular and trivial representations
 
@@ -55,7 +59,11 @@ for all $a,b \in A$
 \end{definition}
 
 \begin{definition}[Radical]
-    The radical of a finite dimensional algebra $A$ denoted by $\operatorname{Rad}(A)$ is an ideal of $A$ containing all elements that are mapped to the zero map in all irreducible representations of $A$.
+    The radical of a finite dimensional algebra $A$ denoted by $\operatorname{Rad}(A)$ is an ideal of $A$ containing all elements that are mapped to the zero map in all irreducible representations of $A$. More precisely,
+    \begin{align*}
+        \operatorname{Rad}(A) = \bigcap_i \ker(\rho_i)
+    \end{align*}
+    where $(V_i, \rho_i)$ are the irreducible representations of $A$.
 \end{definition}
 We will then prove that the radical of $A$ is a two sided ideal
 
@@ -68,20 +76,24 @@ So, $ar \in \operatorname{Rad}(A)$. For the right side, since $r \in \operatorna
 \begin{align*}
     \rho(ra)(v) = \rho(r)(\rho(a)(v)) = 0
 \end{align*}
-Thus, $ra \in \operatorname{Rad}(A)$, showing that $\operatorname{Rad}(A)$ is a right sided ideal
+Thus, $ra \in \operatorname{Rad}(A)$, showing that $\operatorname{Rad}(A)$ is a two sided ideal
 \end{proof}
 
-\begin{theorem}[Equivalences to semisimplicity]
+\section{Artin-Wedderburn Theorem}
+\begin{theorem}[Equivalences to semisimplicity] \label{theorem 3.8}
     Let $A$ be a finite dimensional algebra. \textbf{TFAE}:
     \begin{enumerate}
          \item $\operatorname{Rad}(A) = 0$.
-        \item $\sum_{i=1}^r \dim(V_i) = \dim(A)$,
-        \item $A \cong \bigoplus_{i=1}^r \operatorname{Mat}_{d_i}(k)$, where $d_i$ is the dimension of the irreducible representation $V_i$ of $A$.
+        \item $\displaystyle \sum_{i=1}^r \dim(V_i)^2 = \dim(A)$,
+        \item $A \cong \displaystyle \bigoplus_{i=1}^r \operatorname{Mat}_{d_i}(k)$, where $d_i$ is the dimension of the irreducible representation $V_i$ of $A$.
         \item Any finite dimensional representation of $A$ is completely reducible.
         \item $A$ is a semi-simple algebra
     \end{enumerate}
 
 \end{theorem}
+\begin{proof}
+    
+\end{proof}
 \begin{theorem}[The irreducible representations of a matrix algebra]
     Let $A = \operatorname{Mat}_d(k)$ be a matrix algebra. The only irreducible representation of $A$ is the trivial representation $V = k^{\oplus d}$. Moreover, any finite dimensional representation $W$ of $A$ is a direct sum of $k^{\oplus d}$ i.e. $W = V^{\oplus m}$ for some $m$.
 \end{theorem}
@@ -90,34 +102,11 @@ The previous theorem completely describes the finite dimensional representations
 
 
 \section{Density Theorem}
-\begin{theorem}[Density Theorem]
-    Let $A$ be a finite dimensional algebra, and $V_1, V_2, \dots, V_r$ be the irreducible representations of $A$, then
-    \begin{itemize}
-        \item For any $i$ we have that $\rho_i: A \to \operatorname{End}(V_i)$ is surjective
-        \item The direct sum map $\bigoplus_{i=1}^m \rho_i: A \to \bigoplus_{i=1}^m \operatorname{End}(V_i)$ is surjective
-    \end{itemize}
-\end{theorem}
- We introduce the following two lemmas in our proof
-   \begin{lemma}
-    \label{lemma 3.12}
-    Let $V = \bigoplus_{i=1}^m V_i^{\oplus n_i}$ where $V_i$ are pairwise non-isomorphic representations. 
-    Then any subrepresentation of $V$ is of the form $W = \bigoplus_{i=1}^m V_i^{\oplus m_i}$ where $m_i \leq n_i$ for every $i$, and the inclusion map $\phi: W \hookrightarrow V$ is given by  a direct sum of inclusions of each summand $\phi_i: V_i^{\oplus n_i} \hookrightarrow V_i^{\oplus m_i}$.
- \end{lemma}
-   \begin{lemma}
-    \label{lemma 3.13}
-     Let $V$ be an irreducible representation of $A$ and consider any set of linearly independent vectors $v_1,v_2, \dots , v_r \in V$. 
-     Then for any vectors $w_1, w_2, \dots, w_r \in V$, there is $a \in A$ such that $av_i = w_i$ for every $i$.
-
-   \end{lemma}
-   This lemma basically says that any set of vectors are mapped via some element in $A$ to a linearly independent set of vectors.
-   \begin{proof}
-   
-   \end{proof}
-Before we get to proving the density theorem we introduce the notion of a direct sum of functions denoted by $\bigoplus^r_{i =1} \rho_i$.
-\begin{definition}
-For any set $A$ and a collection of $r$ many sets $B_i$, where $1 \leq i \leq r$. Define $r$ many functions $\phi_i: A \to B_i$, then the \emph{direct sum} of $\phi_i$ is the function $\bigoplus^r_{i=1} \phi_i$ where:
+Before we introduce the density theorem we define the notation of a direct sum of functions denoted by $\displaystyle \bigoplus^r_{i =1} \rho_i$.
+\begin{definition}\label{Def 3.10}
+For any set $A$ and a collection of $r$ many sets $B_i$, where $1 \leq i \leq r$. Define $r$ many functions $\phi_i: A \to B_i$, then the \emph{direct sum} of $\phi_i$ is the function $\displaystyle \bigoplus^r_{i=1} \phi_i$ where:
 \begin{align*}
-    \bigoplus_{i= 1}^r \phi_i: A \to B_i,
+    \bigoplus_{i= 1}^r \phi_i: A \to \bigoplus_{i=1}^r B_i,
 \end{align*}
 given by
 \begin{align*}
@@ -125,7 +114,14 @@ given by
 \end{align*}
 or in a more compact notation $a \mapsto \bigoplus_{i=1}^r \phi_i(a)$ for every $a \in A$.
 \end{definition}
-So, from this definition we can see that the image of $A$ in $\bigoplus_{i=1}^m \operatorname{End}(V_i)$ is a subset of the direct sum of the images of each $\rho_i$. To be more precise, we define the following sets for our proof:
+\begin{theorem}[Density Theorem]\label{3.11}
+    Let $A$ be a finite dimensional algebra, and $V_1, V_2, \dots, V_r$ be the irreducible representations of $A$, then
+    \begin{enumerate}
+        \item For any $i$ we have that $\rho_i: A \to \operatorname{End}(V_i)$ is surjective
+        \item The direct sum map $\bigoplus_{i=1}^m \rho_i: A \to \bigoplus_{i=1}^m \operatorname{End}(V_i)$ is surjective
+    \end{enumerate}
+\end{theorem}
+So, from definition~\ref{Def 3.10} we can see that the image of $A$ in $\bigoplus_{i=1}^m \operatorname{End}(V_i)$ is a subset of the direct sum of the images of each $\rho_i$. To be more precise, we define the following sets for our proof:
 \begin{enumerate}
     \item The image of $A$ in $\bigoplus_{i=1}^m \operatorname{End}(V_i)$ is the set $B = \big \{\bigoplus_{i=1}^m \rho_i(a) \mid a \in A \big\}.$
     \item  The sets $B_i = \operatorname{Img} (\rho_i)$. Their direct sum $\bigoplus_{i=1}^m B_i = \big\{\bigoplus_{i=1}^m \rho_i(a_i) \mid a_i \in A \big\}$
@@ -134,62 +130,274 @@ So, from this definition we can see that the image of $A$ in $\bigoplus_{i=1}^m 
 \\
 Those two sets $B$ and $\bigoplus_i B_i$ seem to be equal at the first glance, but in fact $B \subseteq \bigoplus^m_{i=1} B_i$. This is because the tuples in $B$ have the same $a$ as an input for each $\rho_i$, while in the direct sum $\bigoplus^m_{i=1} B_i$ it is not necessarily the case that the input to each $\rho_i$ is the same.
 Now, what we will try to prove and what actually the theorem is telling us is that no matter what tuple of matrices you choose in $\bigoplus_{i=1}^m \operatorname{End}(V_i)$, or for any tuple with any combination of inputs to $\rho_i$, we will be able to find an input element $a \in A$
- such that the tuple we chose is exactly $\bigoplus_{i=1}^m \rho_i(a)$ (note that it is the same $a$!).
+ such that the tuple we chose is exactly $\displaystyle \bigoplus_{i=1}^m \rho_i(a)$ (note that it is the same $a$!).
   This is what surjectivity actually mean here, we pick a tuple in $\bigoplus_{i=1}^m \operatorname{End}(V_i)$, which turns out to be equal to the direct sum $\bigoplus_i B_i$,
    and we want to show that this tuple is in the image of $A$ under the function $\bigoplus_{i=1}^m \rho_i$.
 
 \end{note}
+ We introduce the following two lemmas in our proof
+   \begin{lemma}
+    \label{lemma 3.12}
+    Let $V = \bigoplus_{i=1}^m V_i^{\oplus n_i}$ where $V_i$ are pairwise non-isomorphic representations. 
+    Then any subrepresentation of $V$ is of the form $W = \bigoplus_{i=1}^m V_i^{\oplus m_i}$ where $m_i \leq n_i$ for every $i$, and the inclusion map $\phi: W \hookrightarrow V$ is given by  a direct sum of inclusions of each summand $\phi_i: V_i^{\oplus n_i} \hookrightarrow V_i^{\oplus m_i}$, which are $n_i \times m_i$ matrices.
+ \end{lemma}
 
-  
-\begin{proof}
-    First, we prove the case for $m =1$, i.e. where the function $\rho: A \to \operatorname{End}(V)$ is surjective for any irreducible finite dimensional representation $V$. 
-    Let $v_1, v_2, \dots, v_n$ be a basis for $V$. Since $v_i$ are linearly independent, then by Lemma~\ref{lemma 3.13} for any set of vectors $w_1, w_2, \dots, w_n$, there exist $a \in A$ such that $av_i = w_i$. Let $\alpha \in \operatorname{End}(V)$ be any linear transformation. Consider the set $w_i$ of the images of $v_i$ under $\alpha$ that is $\alpha(v_i) = w_i$. Therefore, $\alpha$ is a preimage for $a$. Hence, $\rho$ is surjective.
-    
-Now, for the general case consider the set $B$ we defined above. Observe that the representation $\bigoplus_{i=1}^m \operatorname{End}(V_i)$ is a completely reducible representation of $A$, where $\operatorname{End}(V_i) \cong V_i^{\oplus d_i}$ and $d_i$ is the dimension of $V_i$. By surjectivity of each $\rho_i$, we get that 
-\begin{align*}
-B_i \cong \operatorname{End}(V_i) \cong V_i^{\oplus d_i}.
-\end{align*}
+ The intuition behind this lemma comes from Schur's lemma. \marginpar{To be continued}
+   \begin{lemma}
+    \label{lemma 3.13}
+     Let $V$ be an irreducible representation of $A$ and consider any set of linearly independent vectors $v_1,v_2, \dots , v_r \in V$. 
+     Then for any vectors $w_1, w_2, \dots, w_r \in V$, there is $a \in A$ such that $av_i = w_i$ for every $i$.
 
-for all $1\leq i \leq r$. So, $\bigoplus_i B_i$ is completely reducible, and 
-\begin{align*}
-\bigoplus_{i}B_i \cong \bigoplus_{i=1}^m V_i^{\oplus d_i}.
-\end{align*}
-Since $B \subseteq \bigoplus_{i}B_i$ is a subrepresentation since it is the image of a homomorphism of representations. Then by Lemma~\ref{lemma 3.12}, $B = W = \bigoplus_{i = 1}^m V_i^{\oplus k_i}$, where $k_i \leq d_i$ and $B = \phi(W)$ since $\phi$ is an inclusion.
-\\ Define the set
-\begin{align*}
-    \pi_i (B)= \{\rho_i(a) \mid a \in A\} \cong \rho_i(A) = B_i
-\end{align*}
-This function $\pi_i$ just outputs a subset of $B$ by taking the tuples that are all zeroes except the $i-$th entry ranging over all $a \in A$. 
-Similarly, 
-\begin{align*}
-    \pi_i(\phi (W)) = \{\phi_i(w_i) \mid w_i \in V_i^{\oplus k_i}\}
-\end{align*}
-Hence, we get the following chain of equalities
-\begin{align*}
-\pi_i(B) = \pi_i(\phi(W)) = \phi_i(V_i^{\oplus k_i}) = V_i^{\oplus k_i} =B_i.
-\end{align*}
-Therefore, 
-\begin{align*}
-    \bigoplus_i B_i = \bigoplus_{i=1}^m V_i^{\oplus k_i} = B
-\end{align*}
-as desired.
+   \end{lemma}
+   This lemma basically says that any set of vectors are mapped via some element in $A$ to a linearly independent set of vectors.
+   \begin{proof}
+   Let $V$ be an irreducible representation of dimension $n$ and $v_1, v_2, \dots v_n \in V$ be a linearly independent set. Consider the map $\phi: A \to V^{\oplus n}$ given by
+   \begin{align*}
+    a \mapsto (av_1, av_2, \dots, av_n)
+   \end{align*} 
+   . Assume for the sake of contradiction that there are vectors $w_1,w_2, \dots, w_n$ such that for any $a \in A$ we can't have $av_i = w_i$. Therefore, vectors $w_i \not \in \operatorname{Img}(\phi)$. So, the image of $\phi$ is a proper subrepresentation of $V^{\oplus n}$. By Lemma~\ref{lemma 3.12} $\operatorname{Img}(\phi) $ is of the form $V^{\oplus d}$ where $d < n$. 
+   Since the map of inclusion $\operatorname{Img}(\phi) \to V^{\oplus n}$ is given by some $d \times n$ matrix $X$, then by rank-nullity we can find a nonzero vector of scalars $c = [c_1,c_2, \dots ,c_n]$ such that $X\textbf{c} = 0$. Now, consider the sum 
+   \begin{align}
+   \sum_i c_iv_i = [c_1, c_2, \dots, c_n] \begin{bmatrix}
+    v_1 \\ v_2 \\ \vdots \\ v_n 
+   \end{bmatrix}
+   \end{align}
+ Note that $\phi(1) = (v_1,v_2, \dots , v_n)$, so $(v_1,v_2, \dots, v_n) \in \operatorname{Img}(\phi)$. Thus \begin{align*}
+ [v_1,v_2 , \dots, v_n]^T =[q_1,q_2, \dots, q_d] X
+ \end{align*} Substituting for $\textbf{v}^T$ in (3.1) we get:
+ \begin{align*}
+  \sum_i c_iv_i =  [q_1,q_2, \dots q_d] X [c_1, c_2, \dots, c_n]^T = \boldsymbol{0}\times [q_1,q_2, \dots, q_d] = 0
+ \end{align*}
+ contradicting that $v_i$ are linearly independent. This completes the proof.
 \end{proof}
-
-Using density theorem, we prove the following nice theorem about the irreducible representations of a finite dimensional algebra (including the semisimple ones). We actually have finitely many of them!
-\begin{theorem}[Finitely many irreducible representations]
-    Let $A$ be a finite dimensional algebra. Then $A$ has only finitely many irreducible finite dimensional representations $V_i$ up to isomorphsim. Moreover, 
+\begin{lemma}
+    Let $A$ be a finite dimensional algebra. Let $(V, \rho)$ be a representation of $A$. Consider $\operatorname{Mat(V)}$ as a representation of $A$ with the action given by matrix multiplication:
     \begin{align*}
-        A \backslash \operatorname{Rad}(A) \cong \bigoplus_i \operatorname{End}(V_i).
-    \end{align*}
-\end{theorem}
+        a \cdot M = \rho(a) \cdot M.
+    \end{align*} 
+    Then the following is true:
+    \begin{enumerate}
+        \item The map $\rho: A \to \operatorname{Mat(V)}$ is an intertwining operator, where $A$ is the regular representation.
+        \item We have the following isomorphism of representations $\operatorname{Mat}(V) \cong V^{\oplus d}$, where $d$ is the dimension of $V$.
+    \end{enumerate}
+\end{lemma}
+
 \begin{proof}
+    First we prove $(1)$. Let $A$ and $\operatorname{Mat}(V)$ be as before. To show that $\rho$ is intertwining we will show that for any $a,b \in A$ we have that $\rho(a b) = a  \cdot \rho(b)$, where $ab$ is a product in $A$ and $\cdot $ is the action of $a$ on $\rho(b) \in \operatorname{Mat}(V)$. By definition of $V$ as $A-$module we have that $\rho(ab) = \rho(a) \cdot \rho(b)$. By definition of the action of $A$, where $a \cdot M = \rho(a) \cdot M$ for all $a \in A$ and $M \in \operatorname{Mat}(V)$, we get the desired equality 
+    \begin{align*}
+        \rho(ab) = \rho(a) \cdot \rho(b) = a \cdot \rho(b).
+    \end{align*}
+For $2$, consider the map $\phi: \operatorname{Mat}(V) \to V^{\oplus d}$ given by mapping every matrix in $\operatorname{Mat}(V)$ to the vector in $V^{\oplus d}$ with the $i-$th entry representing the $i-$th column in the matrix. 
+That is 
+\begin{align*}
+   \begin{pmatrix}
+     m_{11} & m_{12} & \dots & m_{1d} \\
+    m_{21} & m_{22} & \dots & m_{2d}\\
+    \vdots  & \vdots & \ddots & \vdots \\
+    m_{d1} & m_{d2} & \dots & m_{dd}
+\end{pmatrix} \mapsto \begin{pmatrix}
+    \begin{bmatrix} 
+         m_{11} \\
+         m_{21} \\
+         \vdots \\
+         m_{d1} 
+    \end{bmatrix}, \begin{bmatrix} m_{12} \\ m_{22} \\ \vdots \\ m_{d2}\end{bmatrix}, \dots , \begin{bmatrix}
+        m_{1d} \\ m_{2d} \\ \vdots \\ m_{dd} 
+    \end{bmatrix}
+\end{pmatrix}
+\end{align*}
+This map is clearly surjective. For injectivity suppose for any $M_1, M_2 \in \operatorname{Mat}(V)$ we have $\phi(M_1) = \phi(M_2)$, then the columns of the two matrices are equal so $M_1 = M_2$. It remains to show that $\phi$ is intertwining that is $\phi(a \cdot M) = a \cdot \phi(M)$. By definition of action of $a$ on $M$ we get 
+\begin{align*}
+    \phi(a \cdot M) = \phi(\rho(a) \cdot M)
+\end{align*}
+By definition of matrix multiplication, it works on columns independently. Let 
+
+\begin{align*}
+\rho(a) = \begin{pmatrix}
+    a_{11} & a_{12} & \dots & a_{1d} \\
+    a_{21} & a_{22} & \dots & a_{2d}\\
+    \vdots  & \vdots & \ddots & \vdots \\
+    a_{d1} & a_{d2} & \dots & a_{dd}
+\end{pmatrix} , \quad M = \begin{pmatrix}
+     m_{11} & m_{12} & \dots & m_{1d} \\
+    m_{21} & m_{22} & \dots & m_{2d}\\
+    \vdots  & \vdots & \ddots & \vdots \\
+    m_{d1} & m_{d2} & \dots & m_{dd}
+\end{pmatrix}
+\end{align*}
+We can write $\rho(a)$ and $M$ in a more compact notation  $a = \begin{pmatrix}
+    \mathbf{a_1} \\
+    \mathbf{a_2} \\
+    \vdots \\
+    \mathbf{a_d}
+\end{pmatrix} \quad \text{, where $\mathbf{a_i}$ is the $i-$th row}.$ \\
+\begin{align*} M = \begin{pmatrix}
+    \mathbf{c_1} & \mathbf{c_2} & \dots & \mathbf{c_d}
+\end{pmatrix} &\quad \text{, where $\mathbf{c_j}$ is the $j-$th column}. 
+\end{align*}
+So, the product $\rho(a) \cdot M$ is 
+\begin{align*}
+    \begin{pmatrix}
+        \mathbf{a_1 c_1} & \mathbf{a_1 c_2} & \dots& \mathbf{a_1 c_d} \\
+        \mathbf{a_2 c_1} & \mathbf{a_2 c_2} & \dots &\mathbf{a_2 c_d} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        \mathbf{a_d c_1} & \mathbf{a_d c_2} & \dots  & \mathbf{a_d c_d}
+    \end{pmatrix}
+\end{align*}
+The $i-$th column of the product could be seen as $(d \times 1)-$matrix resulting from multiplying the matrix $a_{d \times d}$ with the $i-$th column of the matrix $M_{d \times 1}$. So, the $i-$th column of the product is exactly the $i-$th entry of the vector $a \cdot \phi(M)$, where $a$ acts on this vector by matrix multiplication with each entry as follows:
+\begin{align*}
+    a \cdot \phi(M) =  \begin{pmatrix}
+   a \cdot \begin{bmatrix} 
+         m_{11} \\
+         m_{21} \\
+         \vdots \\
+         m_{d1} 
+    \end{bmatrix}, a \cdot \begin{bmatrix} m_{12} \\ m_{22} \\ \vdots \\ m_{d2}\end{bmatrix}, \dots ,  a \cdot \begin{bmatrix}
+        m_{1d} \\ m_{2d} \\ \vdots \\ m_{dd} 
+    \end{bmatrix}
+\end{pmatrix}
+\end{align*}
+Therefore $\phi(a \cdot M) = a \cdot \phi(M)$ as desired.
+\end{proof}
+Now, we are ready to prove the density theorem
+
+\begin{proof}
+    \begin{enumerate}
+        \item Since $V_i$ is a representation of $A$, then $\operatorname{End}(V_i) \cong \operatorname{Mat}(V_i) \cong V_i^{\oplus d_i}$, where $d_i$ is the dimension of $V_i$. Since $\operatorname{Img}(\rho_i)$ is a subrepresentation of $\operatorname{End}(V_i)$ then by lemma~\ref{lemma 3.12}, $\operatorname{Img}(\rho_i)$ is of the form $V^{\oplus m}$ for some $m \leq d$. We will show that $m = d$. Let $v_1, v_2, \dots , v_d$ be a basis of $V^{\oplus d}$. By linear algebra we know that the columns of the any matrix in $\operatorname{Mat}(V)$ is just the images of the basis vector. 
+        So, via $\rho_i$ and the isomorphism $\operatorname{End}(V_i) \cong \operatorname{Mat}(V_i) \cong  V^{\oplus d}$,
+        we get $a \mapsto (av_1, av_2 , \dots, av_n)$. This is exactly the image of $A$ in $\operatorname{End}(V_i)$, because the matrix $\rho(a)$ is completely determined by where it sends the basis vectors of $V$. 
+        Pick any vector $(w_1,w_2, \dots, w_d) \in V^{\oplus d}$, where each $w_i \in V$. By lemma~\ref{lemma 3.13}, there is $a \in A$ such that $(w_1, w_2 , \dots , w_d) = (av_1, av_2, \dots , av_d)$. Therefore, $(w_1, w_2, \dots, w_d) \in \operatorname{Img}(\rho_i) = V^{\oplus m}$, then $V^{\oplus d} \subseteq V^{\oplus m}$, and $m =d$ yielding surjectivity as desired.
     
+\item For the case of $r \geq 2$, we get that the image of the direct sum $\displaystyle\bigoplus_{i =1}^r \rho_i$ is a subrepresentation of $\bigoplus_{i=1}^r \operatorname{End}(V_i) \cong \bigoplus_{i=1}^r V_i^{\oplus d_i}$. By lemma~\ref{lemma 3.12}, the image is of the form $\bigoplus_{i=1}^r V_i^{\oplus m_i}$, and the inclusion is a direct sum of the inclusions of each summand. By $(1)$, we have shown that the inclusion of each summand is surjective. Therefore, the map $\displaystyle\bigoplus_{i =1}^r \rho_i$ is surjective.
+    \end{enumerate}
+\end{proof}
+  
+\begin{corollary}[Finitely many irreps]
+    Let $A$ be any finite dimensional algebra, then $A$ has finitely many finite dimensional irreducible representations $V_i$. Moreover, we have the following isomorphism of algebras:
+    \begin{align*}
+    \bigslant{A}{\operatorname{Rad}(A)} \cong \bigoplus_{i} \operatorname{End}(V_i)
+    \end{align*}
+\end{corollary}
+\begin{proof}
+    Let $A$ be as above. Consider $V$ an irreducible representation of $A$. Then for any non-zero $v \in V$ we have that $Av$ is a subrepresentation (a subspace closed under the action of $A$). Since $Av \neq 0$ and $V$ is irreducible then $Av = V$. Since $A$ is finite dimensional then $V$ is finite dimensional. Since the irreducible representations we considered in Theorem~\ref{3.11} are pairwise non isomorphic, we get that $\sum_{i =1}^{r} \dim(V)^2 = \dim(\bigoplus_{i=1}^{r} \operatorname{End}(V_i))$. By surjectivity of the map $\rho$ in Theorem~\ref{3.11}, and rank-nullity theorem we get that $\sum_{i =1}^{r} \dim(V_i)^2 \leq \dim(A)$. Since $\dim(V_i) \geq 1$ then $r \leq  \sum_{i =1}^{r} \dim(V_i)^2 \leq \dim(A)$, where $r$ is the number of the irreducible representations of $A$, yielding that they are finite as desired. 
+   
+    For the moreover part, clearly $\operatorname{Rad}(A) \subseteq \ker(\rho)$. For the other inclusion, let $a \in A$ be an element of $\ker(\rho)$. Then $\rho(a) = (0,0, \dots , 0)$, where each entry is $\rho_i(a)$. This shows that $a$ is mapped to the zero map in every irreducible representation. Thus $a \in \operatorname{Rad}(A)$. So, $\ker(\rho) \subseteq \operatorname{Rad}(A)$. By the universal property of quotients the map $\rho$ factors through $\operatorname{Img}(\rho)$. Since $\rho$ is surjective then $\operatorname{Img}(\rho) = \bigoplus_{i} \operatorname{End}(V_i)$ showing the desired isomorphism.
+\end{proof}
+\section{Maschke's Theorem}
+
+   \begin{theorem}[Maschke Theorem]
+    Let $G$ be a finite group, and $k$ be a field where $\operatorname{char}(k) \nmid |G|$. Let $(V_i, \rho_i)$ be the irreducible representations of $G$ for $ 1 \leq i \leq r$, then
+    \begin{enumerate}
+        \item $k[G]$ is semi-simple.
+        \item $\phi: k[G] \to \displaystyle \bigoplus_{i =1}^{r} \operatorname{End}(V_i)$ is an isomorphism of algebras.
+    \end{enumerate}
+\end{theorem}
+
+First, we introduce the definition of an idempotent map.
+\begin{definition}
+    Let $V$ be a vector space. Let $P: V \to V$ be a linear map. We say $P$ is idempotent if $P^2 = P$ for all $v \in V$.
+\end{definition}
+
+\begin{corollary}
+       Let $P$ be as before, then $P$ is the identity map on its image.
+\end{corollary}
+\begin{proof}
+    Since $P$ is idempotent then $P^2 = P$ for any $v \in V$. Consider $u \in \operatorname{img}(P)$, then $u = P(v)$ for some $v \in V$. Thus, 
+    \begin{align*}
+        P(u)  = P(P(v)) =  P(v)  = u.
+    \end{align*}
+\end{proof}
+We use the following lemmas in the proof.
+
+\begin{lemma}
+    For any idempotent map $P:V \to V$, we have that 
+    \begin{align*}
+        V = \operatorname{Img}(P) \oplus \operatorname{ker}(P).
+    \end{align*}
+    as vector spaces. 
+\end{lemma}
+\begin{lemma}
+   Let $U,W$ be any subspaces of $V$. Suppose $V = U \oplus W$, then $U = \operatorname{Img}(P) $ and $W = \operatorname{ker}(P)$ for some idempotent map $P$.
+\end{lemma}
+This lemma shows that any decomposition of $V$ into a direct sum is given by some idempotent map in the background.
+
+\begin{proof}
+    Consider $P$ the projection along $W$ onto $U$ that is for any $v = (u ,w) \in V$, where $u \in U$ and $w \in W$, we have that 
+    $P((u,w)) = (u,0)$. 
+    then $P^2 = P$ for every $v \in V$. By definition of $P$ we get $\operatorname{Img}(P) \cong U$ and $\ker(P) \cong W $ because a vector $v$ in the kernel is mapped to zero, which means its $u$ coordinate is $0$ i.e. of the form $(0,w)$. Clearly, $P$ is idempotent, because
+    \begin{align}
+        P(P((u,w))) = P((u,0)) = (u,0),
+    \end{align}
+    Observe that the first equality in (3.2) holds because $\operatorname{Img}(P) = U$, and the second holds because $P\mid_U = \operatorname{id}$.
+
 \end{proof}
 
-\section{Maschke's Theorem}
-   \begin{theorem}[Maschke Theorem]
-    
-\end{theorem}
+Now, we are ready to prove Maschke's Theorem.
 \begin{proof}
-    
+
+    First, suppose $(V, \rho)$ is a representation of $G$, and $W \subset V$ is a subrepresentation of $V$. We will show that there is $W^\prime$ a subrepresentation of $V$ such that $V = W \oplus W^\prime$ as representations.
+    Consider the projection $P: V \to W$ onto $W$. So, $\operatorname{Img}(P) = W$, and $P\mid_W = \operatorname{id}$. We will construct a subrepresentation $W^\prime$ such that $V = W \oplus W^\prime$.
+
+    \subsubsection*{Step 1: $\operatorname{Img}(\overline{P}) = W$}
+    Consider the average map $\overline{P}: V \to V$ defined as
+    \begin{align*}
+        \overline{P} := \frac{1}{|G|} \sum_{g \in G} \rho(g) P \rho(g^{-1}) 
+    \end{align*}
+    Let $\ker(\overline{P}) = W^\prime$. Pick any $v \in V$, then 
+    \begin{align*}
+            \overline{P}(v) &= \frac{1}{|G|} \sum_{g \in G} \rho(g)\big( P \big(\rho(g^{-1})(v)\big)\big) \\
+                            &= \frac{1}{|G|} \sum_{g \in G} \rho(g)\big( P(v^\prime)\big) \\
+                            &= \frac{1}{|G|} \sum_{g \in G} \rho(g)(w)\\
+                            &=\frac{1}{|G|} \sum_{g \in G} w^\prime = \frac{1}{|G|}\times|G| \cdot w^\prime = w^\prime\in W.
+    \end{align*}
+    So, $\operatorname{Img}(\overline{P}) \subseteq W$. To show the other inclusion, we will show that $\overline{P}$ is the identity on $W$. Pick any $w \in W$
+    \begin{align*}
+        \overline{P}(w) &= \frac{1}{|G|} \sum_{g \in G} \rho(g)\big( P \big(\rho(g^{-1})(w)\big)\big) \\
+                            &= \frac{1}{|G|} \sum_{g \in G} \rho(g)\big( \rho(g^{-1} w)\big) \\
+                            &= \frac{1}{|G|} \sum_{g \in G} w = \frac{1}{|G|}\times|G| \cdot w = w.
+    \end{align*}
+    Thus, $\operatorname{Img}(\overline{P}) = W$. Pick any $v \in V$, the image $\overline{P}(v) = w$ for some $w \in W$, then
+    \begin{align*}
+         \overline{P}(\overline{P}(v)) = \overline{P}(w) = w = P(v)
+    \end{align*}
+    So, $\overline{P}$ is idempotent. Hence, $V = \operatorname{Img}(\overline{P}) \oplus \ker(\overline{P}) = W \oplus W^\prime$ as vector spaces. We know $W$ is a subrepresentation. It remains to show that $W^\prime = \ker(\overline{P})$ is a subrepresentation.
+   \\ 
+   \subsubsection*{Step 2: \text{$\overline{P}$ is intertwining}} 
+Pick any $h \in G$ and any $v \in V$, we will show that $\overline{P}(\rho(h)v) = \rho(h) \overline{P}(v)$.
+\begin{align*}
+    \overline{P}(\rho(h) v) &= \frac{1}{|G|} \sum_{g \in G} \rho(g)\big( P \big(\rho(g^{-1})( \rho(h)(v))\big)\big) \\
+                            &= \frac{1}{|G|} \sum_{g \in G} \rho(g)\big( P \big(   \rho(g^{-1} h)(v)  \big) \big)
+\end{align*}
+Let $l^{-1} = g^{-1} h$. So, $l = (g^{-1} h)^{-1} = h^{-1} g$ Then $g = hl$. Substitute in the last equation
+\begin{align*}
+    \overline{P}(\rho(h) v) &= \frac{1}{|G|} \sum_{l \in G} \rho(hl)\big( P \big(   \rho(l^{-1})(v)  \big) \big) \\
+                            &= \frac{1}{|G|} \sum_{l \in G} \rho(h) \rho(l)\big( P \big(   \rho(l^{-1})(v)  \big) \big) \\
+                            &= \rho(h) \frac{1}{|G|} \sum_{l \in G} \rho(h) \rho(l)\big( P \big(   \rho(l^{-1})(v)  \big) \big) \\
+                            &= \rho(h) \overline{P}(v).
+                        \end{align*}                
+                        as desired. Since $\overline{P}$ is intertwining, then $\ker(\overline{P})$ is a subrepresentation. Therefore, $V = W \oplus W^\prime$ as representations.
+    % $\overline{P}$ is the identity on W, kernel of $\overline{P}$ is $W^\prime$ and its image is the same as $P$, then $V = \operatorname{Img}(\overline{P}) \oplus \ker(\overline{P}) = W \oplus W^\prime$. Since $\overline{P}$ is intertwining then $\ker(\overline{P})$ is a subrepresentation.
+    \subsubsection*{Step 3}
+    We have shown that if $V$ is a representation and $W \subset V$ is a subrepresentation then $V = W \oplus W^\prime$ for some subrepresentation $W^\prime$. Now, we will show by induction on $\dim(V)$, under the same hypotheses, that $V$ is a direct sum of irreducible representations.
+    If $\dim(V)= 1$ then it is immediate that $V$ is irreducible. Let $n \geq 2$. Suppose that for any representation $V^\prime$ of $\dim \leq n$ is a direct sum of irreducible representations. Let $V$ be a representation with $\dim(V) = n +1$. By \textbf{Step 2}, $V = W \oplus W^\prime$, where $\dim(W) \leq n$, and $\dim(W^\prime) \leq n$. By the induction hypothesis $W,W^\prime$ are direct sums of irreducible representations, showing the claim is true.
+    Since any representation $V$ of $G$ is completely reducible, then $k[G]$ is semi-simple as desired.             
 \end{proof}
+
+\begin{note}
+
+    Observe that the proof of Maschke's theorem shows that, under the hypothesis of the theorem, $k[G]$ is semi-simple by
+     showing that any representation of $k[G]$ is completely reducible (since they are equivalent as in theorem~\ref{theorem 3.8}). Therefore, any indecomposable representation is irreducible. One can easily show that this fails in general. 
+     That is there are indecomposable representations of $k[G]$ that are not irreducible, if $\operatorname{char}(k)$ divides $|G|$.
+\end{note}
+Now, we give an example of an indecomposable representation of $G$ which is reducible. This happens if $\operatorname{char} (k) \mid |G|$.
+
+\begin{corollary}[The sum of squares formula]
+    Let $V_i$ be as above, then
+    \begin{align*}
+        |G| = \displaystyle \sum_{i=1}^r \dim(V_i)^2.
+    \end{align*}
+\end{corollary}
+\begin{proof}
+    The proof is immediate from Theorem~\ref{theorem 3.8} (2), and the fact that $\dim(k[G]) = |G|$.
+\end{proof}
+

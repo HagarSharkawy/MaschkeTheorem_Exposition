@@ -9,5 +9,6 @@
 \contentsline {section}{\numberline {2.4}The Group Algebra $k[G]$}{16}{}%
 \contentsline {chapter}{\numberline {3}Semi-Simple Algebras}{18}{}%
 \contentsline {section}{\numberline {3.1}Definitions}{18}{}%
-\contentsline {section}{\numberline {3.2}Density Theorem}{22}{}%
-\contentsline {section}{\numberline {3.3}Maschke's Theorem}{25}{}%
+\contentsline {section}{\numberline {3.2}Artin-Wedderburn Theorem}{21}{}%
+\contentsline {section}{\numberline {3.3}Density Theorem}{22}{}%
+\contentsline {section}{\numberline {3.4}Maschke's Theorem}{29}{}%
